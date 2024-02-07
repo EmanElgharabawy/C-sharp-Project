@@ -10,8 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="NorhanMostafa\NewFolder1\" />
+    <Folder Include="NorhanMostafa\NewFolder\" />
     <Folder Include="RofidaMohamed\" />
-    <Folder Include="NorhanMostafa\" />
     <Folder Include="YoussifMohamed\" />
   </ItemGroup>
 
