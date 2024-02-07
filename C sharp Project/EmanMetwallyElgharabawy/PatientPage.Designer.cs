@@ -50,7 +50,6 @@
             label8 = new Label();
             textBox2 = new TextBox();
             comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             label9 = new Label();
             listBox1 = new ListBox();
@@ -281,16 +280,6 @@
             comboBox1.TabIndex = 94;
             comboBox1.Text = "Gender";
             // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(695, 125);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(133, 28);
-            comboBox2.TabIndex = 95;
-            comboBox2.Text = "INIT-Test";
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.CalendarForeColor = SystemColors.ActiveCaption;
@@ -435,7 +424,6 @@
             Controls.Add(listBox1);
             Controls.Add(label9);
             Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label8);
             Controls.Add(textBox2);
@@ -481,7 +469,6 @@
         private TextBox textBox2;
         private Label label7;
         private TextBox textBox1;
-        private ComboBox comboBox2;
         private ComboBox comboBox1;
         private Label label9;
         private DateTimePicker dateTimePicker1;

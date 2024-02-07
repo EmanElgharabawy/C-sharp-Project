@@ -164,7 +164,7 @@
             label1.TabIndex = 21;
             label1.Text = "Clinical Management System";
             // 
-            // Form1
+            // LoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -182,7 +182,7 @@
             Controls.Add(textBox1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login ";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
