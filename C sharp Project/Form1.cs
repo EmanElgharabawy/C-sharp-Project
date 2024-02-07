@@ -6,5 +6,9 @@ namespace C_sharp_Project
         {
             InitializeComponent();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+                    }
     }
 }
