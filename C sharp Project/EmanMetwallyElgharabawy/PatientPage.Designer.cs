@@ -217,9 +217,9 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(96, 168);
             label2.Name = "label2";
-            label2.Size = new Size(78, 28);
+            label2.Size = new Size(91, 28);
             label2.TabIndex = 18;
-            label2.Text = "Home";
+            label2.Text = "Patient";
             // 
             // label5
             // 
@@ -374,7 +374,7 @@
             bunifuThinButton23.ActiveFillColor = Color.SeaGreen;
             bunifuThinButton23.ActiveForecolor = Color.White;
             bunifuThinButton23.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton23.BackColor = Color.White;
+            bunifuThinButton23.BackColor = Color.FromArgb(224, 234, 249);
             bunifuThinButton23.BackgroundImage = (Image)resources.GetObject("bunifuThinButton23.BackgroundImage");
             bunifuThinButton23.ButtonText = "Update";
             bunifuThinButton23.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -414,7 +414,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(224, 234, 249);
             ClientSize = new Size(1127, 696);
             Controls.Add(label10);
             Controls.Add(textBox3);

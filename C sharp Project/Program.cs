@@ -1,3 +1,5 @@
+using C_sharp_Project.EmanMetwallyElgharabawy;
+
 namespace C_sharp_Project
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace C_sharp_Project
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginPage());
+            Application.Run(new Home_Page());
         }
     }
 }

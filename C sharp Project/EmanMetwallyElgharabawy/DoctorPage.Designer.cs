@@ -344,9 +344,9 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(96, 168);
             label2.Name = "label2";
-            label2.Size = new Size(78, 28);
+            label2.Size = new Size(91, 28);
             label2.TabIndex = 18;
-            label2.Text = "Home";
+            label2.Text = "Patient";
             // 
             // pictureBox6
             // 

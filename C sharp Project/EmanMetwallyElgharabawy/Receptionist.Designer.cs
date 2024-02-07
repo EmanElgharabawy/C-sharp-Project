@@ -59,6 +59,7 @@
             label9 = new Label();
             textBox4 = new TextBox();
             comboBox1 = new ComboBox();
+            label11 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -74,7 +75,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Rockwell", 10.2F, FontStyle.Bold);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(865, 79);
+            label10.Location = new Point(869, 115);
             label10.Name = "label10";
             label10.Size = new Size(79, 20);
             label10.TabIndex = 120;
@@ -87,7 +88,7 @@
             bunifuThinButton23.ActiveFillColor = Color.SeaGreen;
             bunifuThinButton23.ActiveForecolor = Color.White;
             bunifuThinButton23.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton23.BackColor = SystemColors.Control;
+            bunifuThinButton23.BackColor = Color.FromArgb(224, 234, 249);
             bunifuThinButton23.BackgroundImage = (Image)resources.GetObject("bunifuThinButton23.BackgroundImage");
             bunifuThinButton23.ButtonText = "Update";
             bunifuThinButton23.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -170,7 +171,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(865, 102);
+            textBox3.Location = new Point(869, 138);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(211, 117);
@@ -181,7 +182,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Rockwell", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(302, 175);
+            label8.Location = new Point(306, 211);
             label8.Name = "label8";
             label8.Size = new Size(62, 20);
             label8.TabIndex = 110;
@@ -189,7 +190,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(302, 198);
+            textBox2.Location = new Point(306, 234);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(191, 34);
@@ -200,7 +201,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Rockwell", 10.2F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(297, 84);
+            label7.Location = new Point(301, 120);
             label7.Name = "label7";
             label7.Size = new Size(170, 20);
             label7.TabIndex = 108;
@@ -208,7 +209,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(297, 107);
+            textBox1.Location = new Point(301, 143);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(196, 34);
@@ -296,9 +297,9 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(96, 168);
             label2.Name = "label2";
-            label2.Size = new Size(78, 28);
+            label2.Size = new Size(91, 28);
             label2.TabIndex = 18;
-            label2.Text = "Home";
+            label2.Text = "Patient";
             // 
             // pictureBox6
             // 
@@ -364,7 +365,7 @@
             // 
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(1061, 3);
+            pictureBox7.Location = new Point(1051, 15);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(51, 50);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -381,7 +382,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Rockwell", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(536, 175);
+            label9.Location = new Point(540, 211);
             label9.Name = "label9";
             label9.Size = new Size(91, 20);
             label9.TabIndex = 122;
@@ -389,7 +390,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(536, 198);
+            textBox4.Location = new Point(540, 234);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(191, 34);
@@ -399,17 +400,31 @@
             // 
             comboBox1.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(536, 107);
+            comboBox1.Location = new Point(540, 143);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(152, 28);
             comboBox1.TabIndex = 111;
             comboBox1.Text = "Gender";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Brown;
+            label11.Location = new Point(596, 71);
+            label11.Name = "label11";
+            label11.Size = new Size(159, 28);
+            label11.TabIndex = 123;
+            label11.Text = "Receptionist ";
+            label11.Click += label11_Click;
+            // 
             // Receptionist
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(224, 234, 249);
             ClientSize = new Size(1127, 696);
+            Controls.Add(label11);
             Controls.Add(label9);
             Controls.Add(textBox4);
             Controls.Add(label10);
@@ -474,5 +489,6 @@
         private Label label9;
         private TextBox textBox4;
         private ComboBox comboBox1;
+        private Label label11;
     }
 }

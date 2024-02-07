@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C_sharp_Project
+namespace C_sharp_Project.EmanMetwallyElgharabawy
 {
-    public partial class Receptionist : Form
+    public partial class Home_Page : Form
     {
-        public Receptionist()
+        public Home_Page()
         {
             InitializeComponent();
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
