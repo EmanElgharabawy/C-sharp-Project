@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EmanMetwallyElgharabawy\" />
     <Folder Include="RofidaMohamed\" />
     <Folder Include="NorhanMostafa\" />
     <Folder Include="YoussifMohamed\" />
