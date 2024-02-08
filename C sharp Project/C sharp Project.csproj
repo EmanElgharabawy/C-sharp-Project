@@ -13,12 +13,19 @@
     <Folder Include="NorhanMostafa\NewFolder1\" />
     <Folder Include="NorhanMostafa\NewFolder\" />
     <Folder Include="RofidaMohamed\hiiiii\" />
-    <Folder Include="YoussifMohamed\Model\Database\" />
-    <Folder Include="YoussifMohamed\Model\Entity\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Bunifu.UI.WinForms" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

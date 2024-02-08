@@ -1,3 +1,5 @@
+using C_sharp_Project.YoussifMohamed.Model.Entity;
+
 namespace C_sharp_Project
 {
     public partial class LoginPage : Form
@@ -5,10 +7,12 @@ namespace C_sharp_Project
         public LoginPage()
         {
             InitializeComponent();
+            
         }
 
+    
         private void label5_Click(object sender, EventArgs e)
         {
-                    }
+        }
     }
 }
