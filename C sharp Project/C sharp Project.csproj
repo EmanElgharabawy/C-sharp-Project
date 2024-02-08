@@ -13,7 +13,7 @@
     <Folder Include="NorhanMostafa\NewFolder1\" />
     <Folder Include="NorhanMostafa\NewFolder\" />
     <Folder Include="RofidaMohamed\hiiiii\" />
-    <Folder Include="YoussifMohamed\" />
+    <Folder Include="YoussifMohamed\Model\" />
   </ItemGroup>
 
   <ItemGroup>
