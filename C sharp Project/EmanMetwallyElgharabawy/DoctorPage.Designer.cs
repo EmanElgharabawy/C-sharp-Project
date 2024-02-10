@@ -64,6 +64,7 @@
             textBox4 = new TextBox();
             label12 = new Label();
             textBox5 = new TextBox();
+            bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -102,7 +103,7 @@
             bunifuThinButton23.IdleFillColor = Color.Green;
             bunifuThinButton23.IdleForecolor = Color.SeaShell;
             bunifuThinButton23.IdleLineColor = Color.SeaGreen;
-            bunifuThinButton23.Location = new Point(334, 270);
+            bunifuThinButton23.Location = new Point(306, 270);
             bunifuThinButton23.Margin = new Padding(6, 5, 6, 5);
             bunifuThinButton23.Name = "bunifuThinButton23";
             bunifuThinButton23.Size = new Size(159, 56);
@@ -126,7 +127,7 @@
             bunifuThinButton22.IdleFillColor = SystemColors.WindowText;
             bunifuThinButton22.IdleForecolor = Color.SeaShell;
             bunifuThinButton22.IdleLineColor = Color.SeaShell;
-            bunifuThinButton22.Location = new Point(596, 270);
+            bunifuThinButton22.Location = new Point(523, 270);
             bunifuThinButton22.Margin = new Padding(6, 5, 6, 5);
             bunifuThinButton22.Name = "bunifuThinButton22";
             bunifuThinButton22.Size = new Size(159, 56);
@@ -150,7 +151,7 @@
             bunifuThinButton21.IdleFillColor = Color.FromArgb(192, 0, 0);
             bunifuThinButton21.IdleForecolor = Color.Transparent;
             bunifuThinButton21.IdleLineColor = Color.Sienna;
-            bunifuThinButton21.Location = new Point(860, 270);
+            bunifuThinButton21.Location = new Point(743, 270);
             bunifuThinButton21.Margin = new Padding(6, 5, 6, 5);
             bunifuThinButton21.Name = "bunifuThinButton21";
             bunifuThinButton21.Size = new Size(159, 56);
@@ -462,11 +463,36 @@
             textBox5.Size = new Size(143, 25);
             textBox5.TabIndex = 123;
             // 
+            // bunifuThinButton24
+            // 
+            bunifuThinButton24.ActiveBorderThickness = 1;
+            bunifuThinButton24.ActiveCornerRadius = 20;
+            bunifuThinButton24.ActiveFillColor = Color.FromArgb(128, 128, 255);
+            bunifuThinButton24.ActiveForecolor = Color.Snow;
+            bunifuThinButton24.ActiveLineColor = Color.SeaGreen;
+            bunifuThinButton24.BackColor = SystemColors.Control;
+            bunifuThinButton24.BackgroundImage = (Image)resources.GetObject("bunifuThinButton24.BackgroundImage");
+            bunifuThinButton24.ButtonText = "Search";
+            bunifuThinButton24.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bunifuThinButton24.ForeColor = Color.SeaGreen;
+            bunifuThinButton24.IdleBorderThickness = 1;
+            bunifuThinButton24.IdleCornerRadius = 20;
+            bunifuThinButton24.IdleFillColor = Color.Blue;
+            bunifuThinButton24.IdleForecolor = Color.Transparent;
+            bunifuThinButton24.IdleLineColor = Color.Sienna;
+            bunifuThinButton24.Location = new Point(949, 270);
+            bunifuThinButton24.Margin = new Padding(6, 5, 6, 5);
+            bunifuThinButton24.Name = "bunifuThinButton24";
+            bunifuThinButton24.Size = new Size(159, 56);
+            bunifuThinButton24.TabIndex = 125;
+            bunifuThinButton24.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // DoctorPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 696);
+            Controls.Add(bunifuThinButton24);
             Controls.Add(label12);
             Controls.Add(textBox5);
             Controls.Add(label11);
@@ -541,5 +567,6 @@
         private TextBox textBox5;
         private Label label11;
         private TextBox textBox4;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
     }
 }
