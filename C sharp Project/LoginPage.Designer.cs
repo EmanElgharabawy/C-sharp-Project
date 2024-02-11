@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            txtUsername = new TextBox();
             pictureBox3 = new PictureBox();
-            textBox2 = new TextBox();
+            txtPassword = new TextBox();
             pictureBox2 = new PictureBox();
             label2 = new Label();
             label3 = new Label();
@@ -40,9 +40,12 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             label1 = new Label();
+            Role = new ComboBox();
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -55,40 +58,40 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.BackColor = Color.DarkSlateGray;
-            textBox1.ForeColor = SystemColors.InactiveBorder;
-            textBox1.Location = new Point(97, 189);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(187, 41);
-            textBox1.TabIndex = 13;
+            txtUsername.BackColor = Color.DarkSlateGray;
+            txtUsername.ForeColor = SystemColors.InactiveBorder;
+            txtUsername.Location = new Point(94, 253);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(187, 41);
+            txtUsername.TabIndex = 13;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(36, 189);
+            pictureBox3.Location = new Point(33, 253);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(42, 41);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 14;
             pictureBox3.TabStop = false;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.BackColor = Color.DarkSlateGray;
-            textBox2.ForeColor = SystemColors.InactiveBorder;
-            textBox2.Location = new Point(95, 290);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(187, 41);
-            textBox2.TabIndex = 15;
+            txtPassword.BackColor = Color.DarkSlateGray;
+            txtPassword.ForeColor = SystemColors.InactiveBorder;
+            txtPassword.Location = new Point(94, 332);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(187, 41);
+            txtPassword.TabIndex = 15;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(34, 290);
+            pictureBox2.Location = new Point(33, 332);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(42, 41);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -100,7 +103,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DarkGreen;
-            label2.Location = new Point(104, 167);
+            label2.Location = new Point(101, 231);
             label2.Name = "label2";
             label2.Size = new Size(87, 18);
             label2.TabIndex = 17;
@@ -111,7 +114,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DarkGreen;
-            label3.Location = new Point(97, 272);
+            label3.Location = new Point(96, 314);
             label3.Name = "label3";
             label3.Size = new Size(80, 18);
             label3.TabIndex = 18;
@@ -123,11 +126,12 @@
             label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Rockwell", 10.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DarkGreen;
-            label4.Location = new Point(97, 425);
+            label4.Location = new Point(97, 452);
             label4.Name = "label4";
             label4.Size = new Size(58, 22);
             label4.TabIndex = 19;
             label4.Text = "Reset";
+            label4.Click += label4_Click;
             // 
             // bunifuThinButton21
             // 
@@ -146,12 +150,13 @@
             bunifuThinButton21.IdleFillColor = Color.White;
             bunifuThinButton21.IdleForecolor = Color.SeaGreen;
             bunifuThinButton21.IdleLineColor = Color.SeaGreen;
-            bunifuThinButton21.Location = new Point(94, 370);
+            bunifuThinButton21.Location = new Point(94, 392);
             bunifuThinButton21.Margin = new Padding(7, 6, 7, 6);
             bunifuThinButton21.Name = "bunifuThinButton21";
             bunifuThinButton21.Size = new Size(190, 49);
             bunifuThinButton21.TabIndex = 20;
             bunifuThinButton21.TextAlign = ContentAlignment.MiddleCenter;
+            bunifuThinButton21.Click += bunifuThinButton21_Click;
             // 
             // label1
             // 
@@ -164,6 +169,28 @@
             label1.TabIndex = 21;
             label1.Text = "Clinical Management System";
             // 
+            // Role
+            // 
+            Role.BackColor = Color.DarkSlateGray;
+            Role.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Role.FormattingEnabled = true;
+            Role.Items.AddRange(new object[] { "Admin ", "Doctor ", "Reciptionist" });
+            Role.Location = new Point(95, 175);
+            Role.Name = "Role";
+            Role.Size = new Size(185, 28);
+            Role.TabIndex = 112;
+            Role.Text = "Role";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(33, 162);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(42, 41);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 113;
+            pictureBox4.TabStop = false;
+            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -171,23 +198,27 @@
             BackColor = Color.FromArgb(191, 219, 248);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(350, 497);
+            Controls.Add(pictureBox4);
+            Controls.Add(Role);
             Controls.Add(label1);
             Controls.Add(bunifuThinButton21);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox2);
+            Controls.Add(txtPassword);
             Controls.Add(pictureBox3);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsername);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login ";
+            Load += LoginPage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,9 +226,9 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox txtUsername;
         private PictureBox pictureBox3;
-        private TextBox textBox2;
+        private TextBox txtPassword;
         private PictureBox pictureBox2;
         private Label label2;
         private Label label3;
@@ -205,5 +236,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Label label1;
+        private ComboBox Role;
+        private PictureBox pictureBox4;
     }
 }

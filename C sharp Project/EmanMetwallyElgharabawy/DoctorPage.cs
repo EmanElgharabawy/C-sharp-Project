@@ -16,5 +16,10 @@ namespace C_sharp_Project
         {
             InitializeComponent();
         }
+
+        private void DoctorPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

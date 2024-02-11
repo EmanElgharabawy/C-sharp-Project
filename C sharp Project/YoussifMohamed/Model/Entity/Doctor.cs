@@ -19,6 +19,6 @@ namespace C_sharp_Project.YoussifMohamed.Model.Entity
         public string? department { get; set; }
         [MinLength(5) , MaxLength(15)]
         [Required]
-        public int password { get; set; }
+        public string? password { get; set; }
     }
 }

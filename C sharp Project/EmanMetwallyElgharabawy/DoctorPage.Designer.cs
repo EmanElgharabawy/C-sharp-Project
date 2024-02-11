@@ -518,6 +518,7 @@
             Name = "DoctorPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DoctorPage";
+            Load += DoctorPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();

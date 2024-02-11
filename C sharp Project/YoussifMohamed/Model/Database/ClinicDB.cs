@@ -12,15 +12,25 @@ namespace C_sharp_Project.YoussifMohamed.Model.Database
     {
         public DbSet<Patient> Patient { get; set; }
         public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<Reciptionist> Reciptionist { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-7DE5S9C\\SQLEXPRESS;Database=DBClinicalManagement;Encrypt=false;Trusted_Connection=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=. ;Database=DBClinicalManagement;Encrypt=false;Trusted_Connection=True;TrustServerCertificate=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PatientTests>().HasKey(a => new { a.PatientID, a.TestsID });
             modelBuilder.Entity<Doctorspatient>().HasKey(a => new { a.PatientID, a.DoctorID });
+
+
+
+            modelBuilder.Entity<Doctor>().HasData(new Doctor { Id=1 , Phone="012345698715" , Name = "Eman" , Address="Cairo" , department="Surgery Department" , password="Doctor123" });
+          
         }
+
+
+       
     }
+
 }

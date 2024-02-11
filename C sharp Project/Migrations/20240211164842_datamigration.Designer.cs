@@ -4,6 +4,7 @@ using C_sharp_Project.YoussifMohamed.Model.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_sharp_Project.Migrations
 {
     [DbContext(typeof(ClinicDB))]
-    partial class ClinicDBModelSnapshot : ModelSnapshot
+    [Migration("20240211164842_datamigration")]
+    partial class datamigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,25 +46,13 @@ namespace C_sharp_Project.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("password")
-                        .IsRequired()
+                    b.Property<int>("password")
                         .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Doctor");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "Cairo",
-                            Name = "Eman",
-                            Phone = "012345698715",
-                            department = "Surgery Department",
-                            password = "Doctor123"
-                        });
                 });
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Doctorspatient", b =>
@@ -138,11 +129,11 @@ namespace C_sharp_Project.Migrations
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Reciptionist", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Recip_Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Recip_Id"));
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -157,7 +148,7 @@ namespace C_sharp_Project.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Recip_Id");
 
                     b.ToTable("Reciptionist");
                 });

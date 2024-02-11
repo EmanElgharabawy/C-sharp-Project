@@ -326,7 +326,7 @@
             bunifuThinButton21.ActiveFillColor = Color.Brown;
             bunifuThinButton21.ActiveForecolor = Color.Snow;
             bunifuThinButton21.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton21.BackColor = Color.White;
+            bunifuThinButton21.BackColor = Color.FromArgb(224, 234, 249);
             bunifuThinButton21.BackgroundImage = (Image)resources.GetObject("bunifuThinButton21.BackgroundImage");
             bunifuThinButton21.ButtonText = "Delete";
             bunifuThinButton21.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -350,7 +350,7 @@
             bunifuThinButton22.ActiveFillColor = Color.SeaGreen;
             bunifuThinButton22.ActiveForecolor = Color.White;
             bunifuThinButton22.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton22.BackColor = Color.White;
+            bunifuThinButton22.BackColor = Color.FromArgb(224, 234, 249);
             bunifuThinButton22.BackgroundImage = (Image)resources.GetObject("bunifuThinButton22.BackgroundImage");
             bunifuThinButton22.ButtonText = "Add";
             bunifuThinButton22.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -436,6 +436,7 @@
             Name = "PatientPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomePage";
+            Load += PatientPage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

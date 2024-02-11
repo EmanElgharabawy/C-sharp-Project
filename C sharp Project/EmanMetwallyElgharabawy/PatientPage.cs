@@ -21,5 +21,10 @@ namespace C_sharp_Project
         {
 
         }
+
+        private void PatientPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
