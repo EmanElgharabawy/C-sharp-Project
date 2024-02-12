@@ -5,20 +5,22 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace C_sharp_Project.YoussifMohamed.Model.Entity
 {
     public class Patient
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Address { get; set; }
-        public string? Phone { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(15,MinimumLength =3, ErrorMessage = "you must enter name between 3 to 15 letter")]
+        public string Name { get; set; }
+        [Required(ErrorMessage = "Address is required")]
+        public string Address { get; set; }
+        [Required(ErrorMessage = "Phone is required")]
+        public string Phone { get; set; }
+        [Required(ErrorMessage = "Date of birth is required")]
         public DateTime DOB { get; set; }
-        [ForeignKey("Reciptionist")]
-        public int RecipID { get; set; }
-        public virtual Reciptionist Reciptionist { get; set; }
 
     }
 }

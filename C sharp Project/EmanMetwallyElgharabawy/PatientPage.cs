@@ -18,13 +18,9 @@ namespace C_sharp_Project
         }
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        {}
 
         private void PatientPage_Load(object sender, EventArgs e)
-        {
-
-        }
+        {}
     }
 }

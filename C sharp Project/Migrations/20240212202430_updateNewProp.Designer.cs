@@ -4,6 +4,7 @@ using C_sharp_Project.YoussifMohamed.Model.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_sharp_Project.Migrations
 {
     [DbContext(typeof(ClinicDB))]
-    partial class ClinicDBModelSnapshot : ModelSnapshot
+    [Migration("20240212202430_updateNewProp")]
+    partial class updateNewProp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,39 +68,6 @@ namespace C_sharp_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doctor");
-                });
-
-            modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Doctorspatient", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Diagnosis")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<int>("DoctorID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Medicine")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<int>("PatientID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorID");
-
-                    b.HasIndex("PatientID");
-
-                    b.ToTable("Doctorspatient");
                 });
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Patient", b =>
@@ -198,25 +168,6 @@ namespace C_sharp_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Reciptionist");
-                });
-
-            modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Doctorspatient", b =>
-                {
-                    b.HasOne("C_sharp_Project.YoussifMohamed.Model.Entity.Doctor", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("C_sharp_Project.YoussifMohamed.Model.Entity.Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctor");
-
-                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.ReciptionAddPatientDoc", b =>

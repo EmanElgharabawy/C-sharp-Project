@@ -4,6 +4,7 @@ using C_sharp_Project.YoussifMohamed.Model.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_sharp_Project.Migrations
 {
     [DbContext(typeof(ClinicDB))]
-    partial class ClinicDBModelSnapshot : ModelSnapshot
+    [Migration("20240212200849_updateRelationShip")]
+    partial class updateRelationShip
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,33 +72,25 @@ namespace C_sharp_Project.Migrations
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Doctorspatient", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("PatientID")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<int>("DoctorID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Diagnosis")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("DoctorID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Medicine")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("PatientID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("PatientID", "DoctorID");
 
                     b.HasIndex("DoctorID");
-
-                    b.HasIndex("PatientID");
 
                     b.ToTable("Doctorspatient");
                 });
@@ -127,43 +122,6 @@ namespace C_sharp_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Patient");
-                });
-
-            modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.ReciptionAddPatientDoc", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Appointment")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DoctorID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatientID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReciptionistID")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorID");
-
-                    b.HasIndex("PatientID");
-
-                    b.HasIndex("ReciptionistID");
-
-                    b.ToTable("ReciptionAddPatientDoc");
                 });
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Reciptionist", b =>
@@ -217,33 +175,6 @@ namespace C_sharp_Project.Migrations
                     b.Navigation("Doctor");
 
                     b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.ReciptionAddPatientDoc", b =>
-                {
-                    b.HasOne("C_sharp_Project.YoussifMohamed.Model.Entity.Doctor", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("C_sharp_Project.YoussifMohamed.Model.Entity.Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("C_sharp_Project.YoussifMohamed.Model.Entity.Reciptionist", "Reciptionist")
-                        .WithMany()
-                        .HasForeignKey("ReciptionistID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctor");
-
-                    b.Navigation("Patient");
-
-                    b.Navigation("Reciptionist");
                 });
 #pragma warning restore 612, 618
         }

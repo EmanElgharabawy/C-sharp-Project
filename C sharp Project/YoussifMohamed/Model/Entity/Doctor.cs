@@ -10,15 +10,16 @@ namespace C_sharp_Project.YoussifMohamed.Model.Entity
 {
     public class Doctor
     {
-     
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Address { get; set; }
-        public string? Phone { get; set; }
-        [StringLength(20)]
-        public string? department { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public string Specialization { get; set; }
+        public string Experience { get; set; }
+        public string Address { get; set; }
+        public DateTime DOB { get; set; }
+        public string Phone { get; set; }
         [MinLength(5) , MaxLength(15)]
         [Required]
-        public string? password { get; set; }
+        public string password { get; set; }
     }
 }

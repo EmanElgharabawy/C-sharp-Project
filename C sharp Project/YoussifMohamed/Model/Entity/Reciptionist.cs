@@ -10,14 +10,13 @@ namespace C_sharp_Project.YoussifMohamed.Model.Entity
 {
     public class Reciptionist
     {
-        [Key]
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Address { get; set; }
-        public string? Phone { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
         [MinLength(5) , MaxLength(15)]
         [Required]
-        public string? Password { get; set; }
-        public virtual ICollection<Patient> Patient { get; set; }
+        public string Password { get; set; }
     }
 }

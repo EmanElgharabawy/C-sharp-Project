@@ -4,6 +4,7 @@ using C_sharp_Project.YoussifMohamed.Model.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_sharp_Project.Migrations
 {
     [DbContext(typeof(ClinicDB))]
-    partial class ClinicDBModelSnapshot : ModelSnapshot
+    [Migration("20240212200555_updateRelation")]
+    partial class updateRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,33 +72,25 @@ namespace C_sharp_Project.Migrations
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.Doctorspatient", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("PatientID")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<int>("DoctorID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Diagnosis")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("DoctorID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Medicine")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("PatientID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("PatientID", "DoctorID");
 
                     b.HasIndex("DoctorID");
-
-                    b.HasIndex("PatientID");
 
                     b.ToTable("Doctorspatient");
                 });
@@ -131,35 +126,27 @@ namespace C_sharp_Project.Migrations
 
             modelBuilder.Entity("C_sharp_Project.YoussifMohamed.Model.Entity.ReciptionAddPatientDoc", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Appointment")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DoctorID")
-                        .HasColumnType("int");
-
                     b.Property<int>("PatientID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Price")
+                    b.Property<int>("DoctorID")
                         .HasColumnType("int");
 
                     b.Property<int>("ReciptionistID")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Appointment")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
-                    b.HasKey("Id");
+                    b.HasKey("PatientID", "DoctorID", "ReciptionistID");
 
                     b.HasIndex("DoctorID");
-
-                    b.HasIndex("PatientID");
 
                     b.HasIndex("ReciptionistID");
 

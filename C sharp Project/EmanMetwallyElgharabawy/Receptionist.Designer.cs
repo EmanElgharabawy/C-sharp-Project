@@ -35,7 +35,6 @@
             bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
-            listBox1 = new ListBox();
             textBox3 = new TextBox();
             label8 = new Label();
             textBox2 = new TextBox();
@@ -60,6 +59,7 @@
             textBox4 = new TextBox();
             comboBox1 = new ComboBox();
             label11 = new Label();
+            listBox1 = new ListBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -112,7 +112,7 @@
             bunifuThinButton22.ActiveFillColor = Color.SeaGreen;
             bunifuThinButton22.ActiveForecolor = Color.White;
             bunifuThinButton22.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton22.BackColor = SystemColors.Control;
+            bunifuThinButton22.BackColor = Color.FromArgb(224, 234, 249);
             bunifuThinButton22.BackgroundImage = (Image)resources.GetObject("bunifuThinButton22.BackgroundImage");
             bunifuThinButton22.ButtonText = "Add";
             bunifuThinButton22.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -136,7 +136,7 @@
             bunifuThinButton21.ActiveFillColor = Color.Brown;
             bunifuThinButton21.ActiveForecolor = Color.Snow;
             bunifuThinButton21.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton21.BackColor = SystemColors.Control;
+            bunifuThinButton21.BackColor = Color.FromArgb(224, 234, 249);
             bunifuThinButton21.BackgroundImage = (Image)resources.GetObject("bunifuThinButton21.BackgroundImage");
             bunifuThinButton21.ButtonText = "Delete";
             bunifuThinButton21.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -157,17 +157,6 @@
             // 
             bunifuElipse2.ElipseRadius = 25;
             bunifuElipse2.TargetControl = listBox1;
-            // 
-            // listBox1
-            // 
-            listBox1.BackColor = Color.FromArgb(241, 247, 254);
-            listBox1.BorderStyle = BorderStyle.None;
-            listBox1.ForeColor = SystemColors.WindowText;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(256, 366);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(856, 300);
-            listBox1.TabIndex = 115;
             // 
             // textBox3
             // 
@@ -418,6 +407,17 @@
             label11.Text = "Receptionist ";
             label11.Click += label11_Click;
             // 
+            // listBox1
+            // 
+            listBox1.BackColor = Color.FromArgb(241, 247, 254);
+            listBox1.BorderStyle = BorderStyle.None;
+            listBox1.ForeColor = SystemColors.WindowText;
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(256, 366);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(856, 300);
+            listBox1.TabIndex = 115;
+            // 
             // Receptionist
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -465,7 +465,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private ListBox listBox1;
         private TextBox textBox3;
         private Label label8;
         private TextBox textBox2;
@@ -490,5 +489,6 @@
         private TextBox textBox4;
         private ComboBox comboBox1;
         private Label label11;
+        private ListBox listBox1;
     }
 }
