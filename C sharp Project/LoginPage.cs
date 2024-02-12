@@ -87,6 +87,12 @@ namespace C_sharp_Project
                 }
             }
         }
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Role.SelectedIndex = -1;
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+        }
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
@@ -95,11 +101,5 @@ namespace C_sharp_Project
         {
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            Role.SelectedIndex = 0;
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-        }
     }
 }
