@@ -31,9 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
             label10 = new Label();
-            bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
-            bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
             textBox3 = new TextBox();
             label8 = new Label();
@@ -59,7 +56,11 @@
             textBox4 = new TextBox();
             comboBox1 = new ComboBox();
             label11 = new Label();
-            listBox1 = new ListBox();
+            dataGridView1 = new DataGridView();
+            searchbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            updatebtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            addbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            deletebtn = new Bunifu.Framework.UI.BunifuThinButton2();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -81,82 +83,9 @@
             label10.TabIndex = 120;
             label10.Text = "Address";
             // 
-            // bunifuThinButton23
-            // 
-            bunifuThinButton23.ActiveBorderThickness = 1;
-            bunifuThinButton23.ActiveCornerRadius = 20;
-            bunifuThinButton23.ActiveFillColor = Color.SeaGreen;
-            bunifuThinButton23.ActiveForecolor = Color.White;
-            bunifuThinButton23.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton23.BackColor = Color.FromArgb(224, 234, 249);
-            bunifuThinButton23.BackgroundImage = (Image)resources.GetObject("bunifuThinButton23.BackgroundImage");
-            bunifuThinButton23.ButtonText = "Update";
-            bunifuThinButton23.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton23.ForeColor = Color.SeaGreen;
-            bunifuThinButton23.IdleBorderThickness = 1;
-            bunifuThinButton23.IdleCornerRadius = 20;
-            bunifuThinButton23.IdleFillColor = Color.Green;
-            bunifuThinButton23.IdleForecolor = Color.SeaShell;
-            bunifuThinButton23.IdleLineColor = Color.SeaGreen;
-            bunifuThinButton23.Location = new Point(334, 293);
-            bunifuThinButton23.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton23.Name = "bunifuThinButton23";
-            bunifuThinButton23.Size = new Size(159, 56);
-            bunifuThinButton23.TabIndex = 118;
-            bunifuThinButton23.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // bunifuThinButton22
-            // 
-            bunifuThinButton22.ActiveBorderThickness = 1;
-            bunifuThinButton22.ActiveCornerRadius = 20;
-            bunifuThinButton22.ActiveFillColor = Color.SeaGreen;
-            bunifuThinButton22.ActiveForecolor = Color.White;
-            bunifuThinButton22.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton22.BackColor = Color.FromArgb(224, 234, 249);
-            bunifuThinButton22.BackgroundImage = (Image)resources.GetObject("bunifuThinButton22.BackgroundImage");
-            bunifuThinButton22.ButtonText = "Add";
-            bunifuThinButton22.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton22.ForeColor = Color.SeaGreen;
-            bunifuThinButton22.IdleBorderThickness = 1;
-            bunifuThinButton22.IdleCornerRadius = 20;
-            bunifuThinButton22.IdleFillColor = SystemColors.WindowText;
-            bunifuThinButton22.IdleForecolor = Color.SeaShell;
-            bunifuThinButton22.IdleLineColor = Color.SeaShell;
-            bunifuThinButton22.Location = new Point(596, 293);
-            bunifuThinButton22.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton22.Name = "bunifuThinButton22";
-            bunifuThinButton22.Size = new Size(159, 56);
-            bunifuThinButton22.TabIndex = 117;
-            bunifuThinButton22.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // bunifuThinButton21
-            // 
-            bunifuThinButton21.ActiveBorderThickness = 1;
-            bunifuThinButton21.ActiveCornerRadius = 20;
-            bunifuThinButton21.ActiveFillColor = Color.Brown;
-            bunifuThinButton21.ActiveForecolor = Color.Snow;
-            bunifuThinButton21.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton21.BackColor = Color.FromArgb(224, 234, 249);
-            bunifuThinButton21.BackgroundImage = (Image)resources.GetObject("bunifuThinButton21.BackgroundImage");
-            bunifuThinButton21.ButtonText = "Delete";
-            bunifuThinButton21.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton21.ForeColor = Color.SeaGreen;
-            bunifuThinButton21.IdleBorderThickness = 1;
-            bunifuThinButton21.IdleCornerRadius = 20;
-            bunifuThinButton21.IdleFillColor = Color.FromArgb(192, 0, 0);
-            bunifuThinButton21.IdleForecolor = Color.Transparent;
-            bunifuThinButton21.IdleLineColor = Color.Sienna;
-            bunifuThinButton21.Location = new Point(860, 293);
-            bunifuThinButton21.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton21.Name = "bunifuThinButton21";
-            bunifuThinButton21.Size = new Size(159, 56);
-            bunifuThinButton21.TabIndex = 116;
-            bunifuThinButton21.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // bunifuElipse2
             // 
             bunifuElipse2.ElipseRadius = 25;
-            bunifuElipse2.TargetControl = listBox1;
             // 
             // textBox3
             // 
@@ -171,7 +100,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Rockwell", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(306, 211);
+            label8.Location = new Point(306, 198);
             label8.Name = "label8";
             label8.Size = new Size(62, 20);
             label8.TabIndex = 110;
@@ -179,7 +108,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(306, 234);
+            textBox2.Location = new Point(306, 221);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(191, 34);
@@ -276,7 +205,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 696);
+            panel1.Size = new Size(250, 700);
             panel1.TabIndex = 104;
             // 
             // label2
@@ -371,7 +300,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Rockwell", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(540, 211);
+            label9.Location = new Point(540, 198);
             label9.Name = "label9";
             label9.Size = new Size(91, 20);
             label9.TabIndex = 122;
@@ -379,7 +308,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(540, 234);
+            textBox4.Location = new Point(540, 221);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(191, 34);
@@ -407,32 +336,127 @@
             label11.Text = "Receptionist ";
             label11.Click += label11_Click;
             // 
-            // listBox1
+            // dataGridView1
             // 
-            listBox1.BackColor = Color.FromArgb(241, 247, 254);
-            listBox1.BorderStyle = BorderStyle.None;
-            listBox1.ForeColor = SystemColors.WindowText;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(256, 366);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(856, 300);
-            listBox1.TabIndex = 115;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(256, 343);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(892, 347);
+            dataGridView1.TabIndex = 131;
+            // 
+            // searchbtn
+            // 
+            searchbtn.ActiveBorderThickness = 1;
+            searchbtn.ActiveCornerRadius = 20;
+            searchbtn.ActiveFillColor = Color.FromArgb(128, 128, 255);
+            searchbtn.ActiveForecolor = Color.Snow;
+            searchbtn.ActiveLineColor = Color.SeaGreen;
+            searchbtn.BackColor = Color.FromArgb(224, 234, 249);
+            searchbtn.BackgroundImage = (Image)resources.GetObject("searchbtn.BackgroundImage");
+            searchbtn.ButtonText = "Search";
+            searchbtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchbtn.ForeColor = Color.SeaGreen;
+            searchbtn.IdleBorderThickness = 1;
+            searchbtn.IdleCornerRadius = 20;
+            searchbtn.IdleFillColor = Color.Blue;
+            searchbtn.IdleForecolor = Color.Transparent;
+            searchbtn.IdleLineColor = Color.Sienna;
+            searchbtn.Location = new Point(949, 276);
+            searchbtn.Margin = new Padding(6, 5, 6, 5);
+            searchbtn.Name = "searchbtn";
+            searchbtn.Size = new Size(159, 56);
+            searchbtn.TabIndex = 130;
+            searchbtn.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // updatebtn
+            // 
+            updatebtn.ActiveBorderThickness = 1;
+            updatebtn.ActiveCornerRadius = 20;
+            updatebtn.ActiveFillColor = Color.SeaGreen;
+            updatebtn.ActiveForecolor = Color.White;
+            updatebtn.ActiveLineColor = Color.SeaGreen;
+            updatebtn.BackColor = Color.FromArgb(224, 234, 249);
+            updatebtn.BackgroundImage = (Image)resources.GetObject("updatebtn.BackgroundImage");
+            updatebtn.ButtonText = "Update";
+            updatebtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updatebtn.ForeColor = Color.SeaGreen;
+            updatebtn.IdleBorderThickness = 1;
+            updatebtn.IdleCornerRadius = 20;
+            updatebtn.IdleFillColor = Color.Green;
+            updatebtn.IdleForecolor = Color.SeaShell;
+            updatebtn.IdleLineColor = Color.SeaGreen;
+            updatebtn.Location = new Point(306, 276);
+            updatebtn.Margin = new Padding(6, 5, 6, 5);
+            updatebtn.Name = "updatebtn";
+            updatebtn.Size = new Size(159, 56);
+            updatebtn.TabIndex = 129;
+            updatebtn.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // addbtn
+            // 
+            addbtn.ActiveBorderThickness = 1;
+            addbtn.ActiveCornerRadius = 20;
+            addbtn.ActiveFillColor = Color.SeaGreen;
+            addbtn.ActiveForecolor = Color.White;
+            addbtn.ActiveLineColor = Color.SeaGreen;
+            addbtn.BackColor = Color.FromArgb(224, 234, 249);
+            addbtn.BackgroundImage = (Image)resources.GetObject("addbtn.BackgroundImage");
+            addbtn.ButtonText = "Add";
+            addbtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addbtn.ForeColor = Color.SeaGreen;
+            addbtn.IdleBorderThickness = 1;
+            addbtn.IdleCornerRadius = 20;
+            addbtn.IdleFillColor = SystemColors.WindowText;
+            addbtn.IdleForecolor = Color.SeaShell;
+            addbtn.IdleLineColor = Color.SeaShell;
+            addbtn.Location = new Point(523, 276);
+            addbtn.Margin = new Padding(6, 5, 6, 5);
+            addbtn.Name = "addbtn";
+            addbtn.Size = new Size(159, 56);
+            addbtn.TabIndex = 128;
+            addbtn.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // deletebtn
+            // 
+            deletebtn.ActiveBorderThickness = 1;
+            deletebtn.ActiveCornerRadius = 20;
+            deletebtn.ActiveFillColor = Color.Brown;
+            deletebtn.ActiveForecolor = Color.Snow;
+            deletebtn.ActiveLineColor = Color.SeaGreen;
+            deletebtn.BackColor = Color.FromArgb(224, 234, 249);
+            deletebtn.BackgroundImage = (Image)resources.GetObject("deletebtn.BackgroundImage");
+            deletebtn.ButtonText = "Delete";
+            deletebtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deletebtn.ForeColor = Color.SeaGreen;
+            deletebtn.IdleBorderThickness = 1;
+            deletebtn.IdleCornerRadius = 20;
+            deletebtn.IdleFillColor = Color.FromArgb(192, 0, 0);
+            deletebtn.IdleForecolor = Color.Transparent;
+            deletebtn.IdleLineColor = Color.Sienna;
+            deletebtn.Location = new Point(743, 276);
+            deletebtn.Margin = new Padding(6, 5, 6, 5);
+            deletebtn.Name = "deletebtn";
+            deletebtn.Size = new Size(159, 56);
+            deletebtn.TabIndex = 127;
+            deletebtn.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Receptionist
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 234, 249);
-            ClientSize = new Size(1127, 696);
+            ClientSize = new Size(1160, 700);
+            Controls.Add(dataGridView1);
+            Controls.Add(searchbtn);
+            Controls.Add(updatebtn);
+            Controls.Add(addbtn);
+            Controls.Add(deletebtn);
             Controls.Add(label11);
             Controls.Add(label9);
             Controls.Add(textBox4);
             Controls.Add(label10);
-            Controls.Add(bunifuThinButton23);
-            Controls.Add(bunifuThinButton22);
-            Controls.Add(bunifuThinButton21);
             Controls.Add(textBox3);
-            Controls.Add(listBox1);
             Controls.Add(comboBox1);
             Controls.Add(label8);
             Controls.Add(textBox2);
@@ -454,6 +478,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -461,9 +486,6 @@
         #endregion
 
         private Label label10;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private TextBox textBox3;
         private Label label8;
@@ -489,6 +511,10 @@
         private TextBox textBox4;
         private ComboBox comboBox1;
         private Label label11;
-        private ListBox listBox1;
+        private DataGridView dataGridView1;
+        private Bunifu.Framework.UI.BunifuThinButton2 searchbtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 updatebtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 addbtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 deletebtn;
     }
 }

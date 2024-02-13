@@ -31,20 +31,19 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorPage));
             label10 = new Label();
-            bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
-            bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            updatebtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            addbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            deletebtn = new Bunifu.Framework.UI.BunifuThinButton2();
             bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
-            listBox1 = new ListBox();
-            textBox3 = new TextBox();
+            DoctorAddress = new TextBox();
             label9 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            DoctorBirthofdate = new DateTimePicker();
+            Doctorspecialation = new ComboBox();
+            DoctorGender = new ComboBox();
             label8 = new Label();
-            textBox2 = new TextBox();
+            Doctorphone = new TextBox();
             label7 = new Label();
-            textBox1 = new TextBox();
+            Doctorname = new TextBox();
             label5 = new Label();
             label6 = new Label();
             label4 = new Label();
@@ -61,10 +60,11 @@
             pictureBox7 = new PictureBox();
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             label11 = new Label();
-            textBox4 = new TextBox();
+            Doctorpassword = new TextBox();
             label12 = new Label();
-            textBox5 = new TextBox();
-            bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
+            DoctorExperiance = new TextBox();
+            searchbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -73,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -86,101 +87,91 @@
             label10.TabIndex = 120;
             label10.Text = "Address";
             // 
-            // bunifuThinButton23
+            // updatebtn
             // 
-            bunifuThinButton23.ActiveBorderThickness = 1;
-            bunifuThinButton23.ActiveCornerRadius = 20;
-            bunifuThinButton23.ActiveFillColor = Color.SeaGreen;
-            bunifuThinButton23.ActiveForecolor = Color.White;
-            bunifuThinButton23.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton23.BackColor = SystemColors.Control;
-            bunifuThinButton23.BackgroundImage = (Image)resources.GetObject("bunifuThinButton23.BackgroundImage");
-            bunifuThinButton23.ButtonText = "Update";
-            bunifuThinButton23.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton23.ForeColor = Color.SeaGreen;
-            bunifuThinButton23.IdleBorderThickness = 1;
-            bunifuThinButton23.IdleCornerRadius = 20;
-            bunifuThinButton23.IdleFillColor = Color.Green;
-            bunifuThinButton23.IdleForecolor = Color.SeaShell;
-            bunifuThinButton23.IdleLineColor = Color.SeaGreen;
-            bunifuThinButton23.Location = new Point(306, 270);
-            bunifuThinButton23.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton23.Name = "bunifuThinButton23";
-            bunifuThinButton23.Size = new Size(159, 56);
-            bunifuThinButton23.TabIndex = 118;
-            bunifuThinButton23.TextAlign = ContentAlignment.MiddleCenter;
+            updatebtn.ActiveBorderThickness = 1;
+            updatebtn.ActiveCornerRadius = 20;
+            updatebtn.ActiveFillColor = Color.SeaGreen;
+            updatebtn.ActiveForecolor = Color.White;
+            updatebtn.ActiveLineColor = Color.SeaGreen;
+            updatebtn.BackColor = SystemColors.Control;
+            updatebtn.BackgroundImage = (Image)resources.GetObject("updatebtn.BackgroundImage");
+            updatebtn.ButtonText = "Update";
+            updatebtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updatebtn.ForeColor = Color.SeaGreen;
+            updatebtn.IdleBorderThickness = 1;
+            updatebtn.IdleCornerRadius = 20;
+            updatebtn.IdleFillColor = Color.Green;
+            updatebtn.IdleForecolor = Color.SeaShell;
+            updatebtn.IdleLineColor = Color.SeaGreen;
+            updatebtn.Location = new Point(306, 270);
+            updatebtn.Margin = new Padding(6, 5, 6, 5);
+            updatebtn.Name = "updatebtn";
+            updatebtn.Size = new Size(159, 56);
+            updatebtn.TabIndex = 118;
+            updatebtn.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // bunifuThinButton22
+            // addbtn
             // 
-            bunifuThinButton22.ActiveBorderThickness = 1;
-            bunifuThinButton22.ActiveCornerRadius = 20;
-            bunifuThinButton22.ActiveFillColor = Color.SeaGreen;
-            bunifuThinButton22.ActiveForecolor = Color.White;
-            bunifuThinButton22.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton22.BackColor = SystemColors.Control;
-            bunifuThinButton22.BackgroundImage = (Image)resources.GetObject("bunifuThinButton22.BackgroundImage");
-            bunifuThinButton22.ButtonText = "Add";
-            bunifuThinButton22.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton22.ForeColor = Color.SeaGreen;
-            bunifuThinButton22.IdleBorderThickness = 1;
-            bunifuThinButton22.IdleCornerRadius = 20;
-            bunifuThinButton22.IdleFillColor = SystemColors.WindowText;
-            bunifuThinButton22.IdleForecolor = Color.SeaShell;
-            bunifuThinButton22.IdleLineColor = Color.SeaShell;
-            bunifuThinButton22.Location = new Point(523, 270);
-            bunifuThinButton22.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton22.Name = "bunifuThinButton22";
-            bunifuThinButton22.Size = new Size(159, 56);
-            bunifuThinButton22.TabIndex = 117;
-            bunifuThinButton22.TextAlign = ContentAlignment.MiddleCenter;
+            addbtn.ActiveBorderThickness = 1;
+            addbtn.ActiveCornerRadius = 20;
+            addbtn.ActiveFillColor = Color.SeaGreen;
+            addbtn.ActiveForecolor = Color.White;
+            addbtn.ActiveLineColor = Color.SeaGreen;
+            addbtn.BackColor = SystemColors.Control;
+            addbtn.BackgroundImage = (Image)resources.GetObject("addbtn.BackgroundImage");
+            addbtn.ButtonText = "Add";
+            addbtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addbtn.ForeColor = Color.SeaGreen;
+            addbtn.IdleBorderThickness = 1;
+            addbtn.IdleCornerRadius = 20;
+            addbtn.IdleFillColor = SystemColors.WindowText;
+            addbtn.IdleForecolor = Color.SeaShell;
+            addbtn.IdleLineColor = Color.SeaShell;
+            addbtn.Location = new Point(523, 270);
+            addbtn.Margin = new Padding(6, 5, 6, 5);
+            addbtn.Name = "addbtn";
+            addbtn.Size = new Size(159, 56);
+            addbtn.TabIndex = 117;
+            addbtn.TextAlign = ContentAlignment.MiddleCenter;
+            addbtn.Click += bunifuThinButton22_Click;
             // 
-            // bunifuThinButton21
+            // deletebtn
             // 
-            bunifuThinButton21.ActiveBorderThickness = 1;
-            bunifuThinButton21.ActiveCornerRadius = 20;
-            bunifuThinButton21.ActiveFillColor = Color.Brown;
-            bunifuThinButton21.ActiveForecolor = Color.Snow;
-            bunifuThinButton21.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton21.BackColor = SystemColors.Control;
-            bunifuThinButton21.BackgroundImage = (Image)resources.GetObject("bunifuThinButton21.BackgroundImage");
-            bunifuThinButton21.ButtonText = "Delete";
-            bunifuThinButton21.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton21.ForeColor = Color.SeaGreen;
-            bunifuThinButton21.IdleBorderThickness = 1;
-            bunifuThinButton21.IdleCornerRadius = 20;
-            bunifuThinButton21.IdleFillColor = Color.FromArgb(192, 0, 0);
-            bunifuThinButton21.IdleForecolor = Color.Transparent;
-            bunifuThinButton21.IdleLineColor = Color.Sienna;
-            bunifuThinButton21.Location = new Point(743, 270);
-            bunifuThinButton21.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton21.Name = "bunifuThinButton21";
-            bunifuThinButton21.Size = new Size(159, 56);
-            bunifuThinButton21.TabIndex = 116;
-            bunifuThinButton21.TextAlign = ContentAlignment.MiddleCenter;
+            deletebtn.ActiveBorderThickness = 1;
+            deletebtn.ActiveCornerRadius = 20;
+            deletebtn.ActiveFillColor = Color.Brown;
+            deletebtn.ActiveForecolor = Color.Snow;
+            deletebtn.ActiveLineColor = Color.SeaGreen;
+            deletebtn.BackColor = SystemColors.Control;
+            deletebtn.BackgroundImage = (Image)resources.GetObject("deletebtn.BackgroundImage");
+            deletebtn.ButtonText = "Delete";
+            deletebtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deletebtn.ForeColor = Color.SeaGreen;
+            deletebtn.IdleBorderThickness = 1;
+            deletebtn.IdleCornerRadius = 20;
+            deletebtn.IdleFillColor = Color.FromArgb(192, 0, 0);
+            deletebtn.IdleForecolor = Color.Transparent;
+            deletebtn.IdleLineColor = Color.Sienna;
+            deletebtn.Location = new Point(743, 270);
+            deletebtn.Margin = new Padding(6, 5, 6, 5);
+            deletebtn.Name = "deletebtn";
+            deletebtn.Size = new Size(159, 56);
+            deletebtn.TabIndex = 116;
+            deletebtn.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // bunifuElipse2
             // 
             bunifuElipse2.ElipseRadius = 25;
-            bunifuElipse2.TargetControl = listBox1;
+            bunifuElipse2.TargetControl = this;
             // 
-            // listBox1
+            // DoctorAddress
             // 
-            listBox1.BackColor = Color.FromArgb(241, 247, 254);
-            listBox1.BorderStyle = BorderStyle.None;
-            listBox1.ForeColor = SystemColors.WindowText;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(271, 369);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(841, 300);
-            listBox1.TabIndex = 115;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(906, 116);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(191, 94);
-            textBox3.TabIndex = 119;
+            DoctorAddress.Location = new Point(906, 116);
+            DoctorAddress.Multiline = true;
+            DoctorAddress.Name = "DoctorAddress";
+            DoctorAddress.Size = new Size(191, 94);
+            DoctorAddress.TabIndex = 119;
             // 
             // label9
             // 
@@ -193,37 +184,37 @@
             label9.TabIndex = 114;
             label9.Text = "DOB";
             // 
-            // dateTimePicker1
+            // DoctorBirthofdate
             // 
-            dateTimePicker1.CalendarForeColor = SystemColors.ActiveCaption;
-            dateTimePicker1.CalendarMonthBackground = SystemColors.HotTrack;
-            dateTimePicker1.CalendarTitleBackColor = Color.FromArgb(28, 121, 202);
-            dateTimePicker1.CalendarTitleForeColor = Color.Silver;
-            dateTimePicker1.Cursor = Cursors.Hand;
-            dateTimePicker1.Location = new Point(297, 192);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(143, 27);
-            dateTimePicker1.TabIndex = 113;
+            DoctorBirthofdate.CalendarForeColor = SystemColors.ActiveCaption;
+            DoctorBirthofdate.CalendarMonthBackground = SystemColors.HotTrack;
+            DoctorBirthofdate.CalendarTitleBackColor = Color.FromArgb(28, 121, 202);
+            DoctorBirthofdate.CalendarTitleForeColor = Color.Silver;
+            DoctorBirthofdate.Cursor = Cursors.Hand;
+            DoctorBirthofdate.Location = new Point(297, 192);
+            DoctorBirthofdate.Name = "DoctorBirthofdate";
+            DoctorBirthofdate.Size = new Size(143, 27);
+            DoctorBirthofdate.TabIndex = 113;
             // 
-            // comboBox2
+            // Doctorspecialation
             // 
-            comboBox2.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(611, 107);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(133, 28);
-            comboBox2.TabIndex = 112;
-            comboBox2.Text = "specialation";
+            Doctorspecialation.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Doctorspecialation.FormattingEnabled = true;
+            Doctorspecialation.Location = new Point(611, 107);
+            Doctorspecialation.Name = "Doctorspecialation";
+            Doctorspecialation.Size = new Size(133, 28);
+            Doctorspecialation.TabIndex = 112;
+            Doctorspecialation.Text = "specialation";
             // 
-            // comboBox1
+            // DoctorGender
             // 
-            comboBox1.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(457, 107);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(133, 28);
-            comboBox1.TabIndex = 111;
-            comboBox1.Text = "Gender";
+            DoctorGender.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DoctorGender.FormattingEnabled = true;
+            DoctorGender.Location = new Point(457, 107);
+            DoctorGender.Name = "DoctorGender";
+            DoctorGender.Size = new Size(133, 28);
+            DoctorGender.TabIndex = 111;
+            DoctorGender.Text = "Gender";
             // 
             // label8
             // 
@@ -236,13 +227,13 @@
             label8.TabIndex = 110;
             label8.Text = "Phone";
             // 
-            // textBox2
+            // Doctorphone
             // 
-            textBox2.Location = new Point(483, 185);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(143, 34);
-            textBox2.TabIndex = 109;
+            Doctorphone.Location = new Point(483, 185);
+            Doctorphone.Multiline = true;
+            Doctorphone.Name = "Doctorphone";
+            Doctorphone.Size = new Size(143, 34);
+            Doctorphone.TabIndex = 109;
             // 
             // label7
             // 
@@ -255,13 +246,13 @@
             label7.TabIndex = 108;
             label7.Text = "Doctor Name";
             // 
-            // textBox1
+            // Doctorname
             // 
-            textBox1.Location = new Point(285, 107);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(160, 28);
-            textBox1.TabIndex = 107;
+            Doctorname.Location = new Point(285, 107);
+            Doctorname.Multiline = true;
+            Doctorname.Name = "Doctorname";
+            Doctorname.Size = new Size(160, 28);
+            Doctorname.TabIndex = 107;
             // 
             // label5
             // 
@@ -335,7 +326,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 696);
+            panel1.Size = new Size(250, 700);
             panel1.TabIndex = 104;
             // 
             // label2
@@ -436,13 +427,13 @@
             label11.TabIndex = 122;
             label11.Text = "Password";
             // 
-            // textBox4
+            // Doctorpassword
             // 
-            textBox4.Location = new Point(656, 185);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(143, 34);
-            textBox4.TabIndex = 121;
+            Doctorpassword.Location = new Point(656, 185);
+            Doctorpassword.Multiline = true;
+            Doctorpassword.Name = "Doctorpassword";
+            Doctorpassword.Size = new Size(143, 34);
+            Doctorpassword.TabIndex = 121;
             // 
             // label12
             // 
@@ -455,62 +446,71 @@
             label12.TabIndex = 124;
             label12.Text = "Experiance";
             // 
-            // textBox5
+            // DoctorExperiance
             // 
-            textBox5.Location = new Point(757, 110);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(143, 25);
-            textBox5.TabIndex = 123;
+            DoctorExperiance.Location = new Point(757, 110);
+            DoctorExperiance.Multiline = true;
+            DoctorExperiance.Name = "DoctorExperiance";
+            DoctorExperiance.Size = new Size(143, 25);
+            DoctorExperiance.TabIndex = 123;
             // 
-            // bunifuThinButton24
+            // searchbtn
             // 
-            bunifuThinButton24.ActiveBorderThickness = 1;
-            bunifuThinButton24.ActiveCornerRadius = 20;
-            bunifuThinButton24.ActiveFillColor = Color.FromArgb(128, 128, 255);
-            bunifuThinButton24.ActiveForecolor = Color.Snow;
-            bunifuThinButton24.ActiveLineColor = Color.SeaGreen;
-            bunifuThinButton24.BackColor = SystemColors.Control;
-            bunifuThinButton24.BackgroundImage = (Image)resources.GetObject("bunifuThinButton24.BackgroundImage");
-            bunifuThinButton24.ButtonText = "Search";
-            bunifuThinButton24.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bunifuThinButton24.ForeColor = Color.SeaGreen;
-            bunifuThinButton24.IdleBorderThickness = 1;
-            bunifuThinButton24.IdleCornerRadius = 20;
-            bunifuThinButton24.IdleFillColor = Color.Blue;
-            bunifuThinButton24.IdleForecolor = Color.Transparent;
-            bunifuThinButton24.IdleLineColor = Color.Sienna;
-            bunifuThinButton24.Location = new Point(949, 270);
-            bunifuThinButton24.Margin = new Padding(6, 5, 6, 5);
-            bunifuThinButton24.Name = "bunifuThinButton24";
-            bunifuThinButton24.Size = new Size(159, 56);
-            bunifuThinButton24.TabIndex = 125;
-            bunifuThinButton24.TextAlign = ContentAlignment.MiddleCenter;
+            searchbtn.ActiveBorderThickness = 1;
+            searchbtn.ActiveCornerRadius = 20;
+            searchbtn.ActiveFillColor = Color.FromArgb(128, 128, 255);
+            searchbtn.ActiveForecolor = Color.Snow;
+            searchbtn.ActiveLineColor = Color.SeaGreen;
+            searchbtn.BackColor = SystemColors.Control;
+            searchbtn.BackgroundImage = (Image)resources.GetObject("searchbtn.BackgroundImage");
+            searchbtn.ButtonText = "Search";
+            searchbtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchbtn.ForeColor = Color.SeaGreen;
+            searchbtn.IdleBorderThickness = 1;
+            searchbtn.IdleCornerRadius = 20;
+            searchbtn.IdleFillColor = Color.Blue;
+            searchbtn.IdleForecolor = Color.Transparent;
+            searchbtn.IdleLineColor = Color.Sienna;
+            searchbtn.Location = new Point(949, 270);
+            searchbtn.Margin = new Padding(6, 5, 6, 5);
+            searchbtn.Name = "searchbtn";
+            searchbtn.Size = new Size(159, 56);
+            searchbtn.TabIndex = 125;
+            searchbtn.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(256, 337);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(892, 347);
+            dataGridView1.TabIndex = 126;
             // 
             // DoctorPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1127, 696);
-            Controls.Add(bunifuThinButton24);
+            ClientSize = new Size(1160, 700);
+            Controls.Add(dataGridView1);
+            Controls.Add(searchbtn);
             Controls.Add(label12);
-            Controls.Add(textBox5);
+            Controls.Add(DoctorExperiance);
             Controls.Add(label11);
-            Controls.Add(textBox4);
+            Controls.Add(Doctorpassword);
             Controls.Add(label10);
-            Controls.Add(bunifuThinButton23);
-            Controls.Add(bunifuThinButton22);
-            Controls.Add(bunifuThinButton21);
-            Controls.Add(textBox3);
-            Controls.Add(listBox1);
+            Controls.Add(updatebtn);
+            Controls.Add(addbtn);
+            Controls.Add(deletebtn);
+            Controls.Add(DoctorAddress);
             Controls.Add(label9);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(DoctorBirthofdate);
+            Controls.Add(Doctorspecialation);
+            Controls.Add(DoctorGender);
             Controls.Add(label8);
-            Controls.Add(textBox2);
+            Controls.Add(Doctorphone);
             Controls.Add(label7);
-            Controls.Add(textBox1);
+            Controls.Add(Doctorname);
             Controls.Add(label5);
             Controls.Add(panel1);
             Controls.Add(pictureBox7);
@@ -528,6 +528,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -535,20 +536,19 @@
         #endregion
 
         private Label label10;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 updatebtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 addbtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 deletebtn;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private ListBox listBox1;
-        private TextBox textBox3;
+        private TextBox DoctorAddress;
         private Label label9;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private DateTimePicker DoctorBirthofdate;
+        private ComboBox Doctorspecialation;
+        private ComboBox DoctorGender;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox Doctorphone;
         private Label label7;
-        private TextBox textBox1;
+        private TextBox Doctorname;
         private Label label5;
         private Label label6;
         private Label label4;
@@ -565,9 +565,10 @@
         private PictureBox pictureBox7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Label label12;
-        private TextBox textBox5;
+        private TextBox DoctorExperiance;
         private Label label11;
-        private TextBox textBox4;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
+        private TextBox Doctorpassword;
+        private Bunifu.Framework.UI.BunifuThinButton2 searchbtn;
+        private DataGridView dataGridView1;
     }
 }
