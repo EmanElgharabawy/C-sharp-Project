@@ -16,11 +16,12 @@ namespace C_sharp_Project.YoussifMohamed.Model.Entity
         [StringLength(15,MinimumLength =3, ErrorMessage = "you must enter name between 3 to 15 letter")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Address is required")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
         [Required(ErrorMessage = "Phone is required")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
         [Required(ErrorMessage = "Date of birth is required")]
         public DateTime DOB { get; set; }
+        public string Gender { get; set; }
 
     }
 }

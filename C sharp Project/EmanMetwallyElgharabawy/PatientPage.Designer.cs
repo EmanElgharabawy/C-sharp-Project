@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientPage));
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             pictureBox7 = new PictureBox();
@@ -45,15 +46,15 @@
             label1 = new Label();
             label2 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
+            textBoxPName = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            textBox2 = new TextBox();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            textBoxPPhone = new TextBox();
+            comboBoxPGender = new ComboBox();
+            dateTimePickerPDOB = new DateTimePicker();
             label9 = new Label();
             bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
-            textBox3 = new TextBox();
+            textBoxPAddress = new TextBox();
             label10 = new Label();
             dataGridView1 = new DataGridView();
             searchbtn = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -79,13 +80,15 @@
             // pictureBox7
             // 
             pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Cursor = Cursors.Hand;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(1064, 21);
+            pictureBox7.Location = new Point(1087, 12);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(51, 50);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 44;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // pictureBox1
             // 
@@ -196,9 +199,9 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(80, 343);
             label3.Name = "label3";
-            label3.Size = new Size(135, 28);
+            label3.Size = new Size(146, 28);
             label3.TabIndex = 20;
-            label3.Text = "Laboratory";
+            label3.Text = "Reservation";
             label3.Click += label3_Click;
             // 
             // label1
@@ -234,13 +237,13 @@
             label5.TabIndex = 45;
             label5.Text = "Clinic Managment System";
             // 
-            // textBox1
+            // textBoxPName
             // 
-            textBox1.Location = new Point(291, 98);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(196, 34);
-            textBox1.TabIndex = 46;
+            textBoxPName.Location = new Point(291, 98);
+            textBoxPName.Multiline = true;
+            textBoxPName.Name = "textBoxPName";
+            textBoxPName.Size = new Size(196, 34);
+            textBoxPName.TabIndex = 46;
             // 
             // label7
             // 
@@ -264,35 +267,36 @@
             label8.TabIndex = 93;
             label8.Text = "Phone";
             // 
-            // textBox2
+            // textBoxPPhone
             // 
-            textBox2.Location = new Point(662, 98);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(191, 34);
-            textBox2.TabIndex = 92;
+            textBoxPPhone.Location = new Point(662, 98);
+            textBoxPPhone.Multiline = true;
+            textBoxPPhone.Name = "textBoxPPhone";
+            textBoxPPhone.Size = new Size(191, 34);
+            textBoxPPhone.TabIndex = 92;
             // 
-            // comboBox1
+            // comboBoxPGender
             // 
-            comboBox1.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(507, 98);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(133, 28);
-            comboBox1.TabIndex = 94;
-            comboBox1.Text = "Gender";
+            comboBoxPGender.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxPGender.FormattingEnabled = true;
+            comboBoxPGender.Items.AddRange(new object[] { "male", "female" });
+            comboBoxPGender.Location = new Point(507, 98);
+            comboBoxPGender.Name = "comboBoxPGender";
+            comboBoxPGender.Size = new Size(133, 28);
+            comboBoxPGender.TabIndex = 94;
+            comboBoxPGender.Text = "Gender";
             // 
-            // dateTimePicker1
+            // dateTimePickerPDOB
             // 
-            dateTimePicker1.CalendarForeColor = SystemColors.ActiveCaption;
-            dateTimePicker1.CalendarMonthBackground = SystemColors.HotTrack;
-            dateTimePicker1.CalendarTitleBackColor = Color.FromArgb(28, 121, 202);
-            dateTimePicker1.CalendarTitleForeColor = Color.Silver;
-            dateTimePicker1.Cursor = Cursors.Hand;
-            dateTimePicker1.Location = new Point(291, 177);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(251, 27);
-            dateTimePicker1.TabIndex = 96;
+            dateTimePickerPDOB.CalendarForeColor = SystemColors.ActiveCaption;
+            dateTimePickerPDOB.CalendarMonthBackground = SystemColors.HotTrack;
+            dateTimePickerPDOB.CalendarTitleBackColor = Color.FromArgb(28, 121, 202);
+            dateTimePickerPDOB.CalendarTitleForeColor = Color.Silver;
+            dateTimePickerPDOB.Cursor = Cursors.Hand;
+            dateTimePickerPDOB.Location = new Point(291, 177);
+            dateTimePickerPDOB.Name = "dateTimePickerPDOB";
+            dateTimePickerPDOB.Size = new Size(251, 27);
+            dateTimePickerPDOB.TabIndex = 96;
             // 
             // label9
             // 
@@ -308,14 +312,15 @@
             // bunifuElipse2
             // 
             bunifuElipse2.ElipseRadius = 25;
+            bunifuElipse2.TargetControl = this;
             // 
-            // textBox3
+            // textBoxPAddress
             // 
-            textBox3.Location = new Point(877, 102);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(211, 94);
-            textBox3.TabIndex = 102;
+            textBoxPAddress.Location = new Point(877, 102);
+            textBoxPAddress.Multiline = true;
+            textBoxPAddress.Name = "textBoxPAddress";
+            textBoxPAddress.Size = new Size(211, 94);
+            textBoxPAddress.TabIndex = 102;
             // 
             // label10
             // 
@@ -331,12 +336,23 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(256, 343);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(892, 347);
             dataGridView1.TabIndex = 131;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
             // searchbtn
             // 
@@ -361,6 +377,7 @@
             searchbtn.Size = new Size(159, 56);
             searchbtn.TabIndex = 130;
             searchbtn.TextAlign = ContentAlignment.MiddleCenter;
+            searchbtn.Click += searchbtn_Click;
             // 
             // updatebtn
             // 
@@ -385,6 +402,7 @@
             updatebtn.Size = new Size(159, 56);
             updatebtn.TabIndex = 129;
             updatebtn.TextAlign = ContentAlignment.MiddleCenter;
+            updatebtn.Click += updatebtn_Click;
             // 
             // addbtn
             // 
@@ -409,6 +427,7 @@
             addbtn.Size = new Size(159, 56);
             addbtn.TabIndex = 128;
             addbtn.TextAlign = ContentAlignment.MiddleCenter;
+            addbtn.Click += addbtn_Click;
             // 
             // deletebtn
             // 
@@ -417,7 +436,7 @@
             deletebtn.ActiveFillColor = Color.Brown;
             deletebtn.ActiveForecolor = Color.LightCoral;
             deletebtn.ActiveLineColor = Color.SeaGreen;
-            deletebtn.BackColor = Color.White;
+            deletebtn.BackColor = Color.FromArgb(224, 234, 249);
             deletebtn.BackgroundImage = (Image)resources.GetObject("deletebtn.BackgroundImage");
             deletebtn.ButtonText = "Delete";
             deletebtn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -433,6 +452,7 @@
             deletebtn.Size = new Size(159, 56);
             deletebtn.TabIndex = 127;
             deletebtn.TextAlign = ContentAlignment.MiddleCenter;
+            deletebtn.Click += deletebtn_Click;
             // 
             // PatientPage
             // 
@@ -446,14 +466,14 @@
             Controls.Add(addbtn);
             Controls.Add(deletebtn);
             Controls.Add(label10);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxPAddress);
             Controls.Add(label9);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox1);
+            Controls.Add(dateTimePickerPDOB);
+            Controls.Add(comboBoxPGender);
             Controls.Add(label8);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxPPhone);
             Controls.Add(label7);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxPName);
             Controls.Add(label5);
             Controls.Add(pictureBox7);
             Controls.Add(panel1);
@@ -493,15 +513,15 @@
         private PictureBox pictureBox1;
         private Label label6;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox textBoxPPhone;
         private Label label7;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private TextBox textBoxPName;
+        private ComboBox comboBoxPGender;
         private Label label9;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerPDOB;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Label label10;
-        private TextBox textBox3;
+        private TextBox textBoxPAddress;
         private DataGridView dataGridView1;
         private Bunifu.Framework.UI.BunifuThinButton2 searchbtn;
         private Bunifu.Framework.UI.BunifuThinButton2 updatebtn;
