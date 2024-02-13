@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
             label10 = new Label();
             bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
@@ -86,6 +89,7 @@
             // bunifuElipse2
             // 
             bunifuElipse2.ElipseRadius = 25;
+            bunifuElipse2.TargetControl = this;
             // 
             // textBox3
             // 
@@ -283,12 +287,13 @@
             // 
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(1051, 15);
+            pictureBox7.Location = new Point(1111, 15);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(51, 50);
+            pictureBox7.Size = new Size(30, 34);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 105;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // bunifuElipse1
             // 
@@ -338,12 +343,38 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Location = new Point(256, 343);
             dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(892, 347);
             dataGridView1.TabIndex = 131;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // searchbtn
             // 
@@ -368,6 +399,7 @@
             searchbtn.Size = new Size(159, 56);
             searchbtn.TabIndex = 130;
             searchbtn.TextAlign = ContentAlignment.MiddleCenter;
+            searchbtn.Click += searchbtn_Click;
             // 
             // updatebtn
             // 
@@ -392,6 +424,7 @@
             updatebtn.Size = new Size(159, 56);
             updatebtn.TabIndex = 129;
             updatebtn.TextAlign = ContentAlignment.MiddleCenter;
+            updatebtn.Click += updatebtn_Click;
             // 
             // addbtn
             // 
@@ -416,6 +449,7 @@
             addbtn.Size = new Size(159, 56);
             addbtn.TabIndex = 128;
             addbtn.TextAlign = ContentAlignment.MiddleCenter;
+            addbtn.Click += addbtn_Click;
             // 
             // deletebtn
             // 
@@ -440,6 +474,7 @@
             deletebtn.Size = new Size(159, 56);
             deletebtn.TabIndex = 127;
             deletebtn.TextAlign = ContentAlignment.MiddleCenter;
+            deletebtn.Click += deletebtn_Click;
             // 
             // Receptionist
             // 

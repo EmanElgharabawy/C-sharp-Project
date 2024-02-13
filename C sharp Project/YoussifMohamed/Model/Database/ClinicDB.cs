@@ -19,7 +19,7 @@ namespace C_sharp_Project.YoussifMohamed.Model.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=DBClinicalManagement;Encrypt=false;Trusted_Connection=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-7DE5S9C\\SQLEXPRESS;Database=DBClinicalManagement;Encrypt=false;Trusted_Connection=True;TrustServerCertificate=True");
         }
  
     }
