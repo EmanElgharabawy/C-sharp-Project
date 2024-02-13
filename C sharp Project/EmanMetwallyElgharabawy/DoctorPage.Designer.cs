@@ -110,6 +110,7 @@
             updatebtn.Size = new Size(159, 56);
             updatebtn.TabIndex = 118;
             updatebtn.TextAlign = ContentAlignment.MiddleCenter;
+            updatebtn.Click += updatebtn_Click;
             // 
             // addbtn
             // 
@@ -159,6 +160,7 @@
             deletebtn.Size = new Size(159, 56);
             deletebtn.TabIndex = 116;
             deletebtn.TextAlign = ContentAlignment.MiddleCenter;
+            deletebtn.Click += deletebtn_Click;
             // 
             // bunifuElipse2
             // 
@@ -477,6 +479,7 @@
             searchbtn.Size = new Size(159, 56);
             searchbtn.TabIndex = 125;
             searchbtn.TextAlign = ContentAlignment.MiddleCenter;
+            searchbtn.Click += searchbtn_Click;
             // 
             // dataGridView1
             // 
@@ -486,6 +489,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(892, 347);
             dataGridView1.TabIndex = 126;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // DoctorPage
             // 
