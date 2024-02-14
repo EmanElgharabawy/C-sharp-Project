@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResrveData));
             label1 = new Label();
             PatientBox = new ComboBox();
             drBox = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            dtp1 = new DateTimePicker();
             priceTextBox = new TextBox();
             StateBox = new ComboBox();
             label2 = new Label();
@@ -39,128 +40,96 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            button1 = new Button();
+            okbtn = new Button();
+            CancelBtn = new Button();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft JhengHei", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(41, 39);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(272, 29);
-            label1.TabIndex = 0;
-            label1.Text = "Add New Appointment";
             // 
             // PatientBox
             // 
+            resources.ApplyResources(PatientBox, "PatientBox");
             PatientBox.FormattingEnabled = true;
-            PatientBox.Location = new Point(38, 144);
             PatientBox.Name = "PatientBox";
-            PatientBox.Size = new Size(272, 28);
-            PatientBox.TabIndex = 1;
             // 
             // drBox
             // 
+            resources.ApplyResources(drBox, "drBox");
             drBox.FormattingEnabled = true;
-            drBox.Location = new Point(38, 218);
             drBox.Name = "drBox";
-            drBox.Size = new Size(272, 28);
-            drBox.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtp1
             // 
-            dateTimePicker1.Location = new Point(38, 307);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(272, 27);
-            dateTimePicker1.TabIndex = 3;
+            resources.ApplyResources(dtp1, "dtp1");
+            dtp1.Format = DateTimePickerFormat.Time;
+            dtp1.MinDate = new DateTime(2022, 1, 25, 0, 0, 0, 0);
+            dtp1.Name = "dtp1";
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(38, 389);
+            resources.ApplyResources(priceTextBox, "priceTextBox");
             priceTextBox.Name = "priceTextBox";
-            priceTextBox.Size = new Size(272, 27);
-            priceTextBox.TabIndex = 4;
             // 
             // StateBox
             // 
+            resources.ApplyResources(StateBox, "StateBox");
             StateBox.FormattingEnabled = true;
-            StateBox.Location = new Point(38, 473);
             StateBox.Name = "StateBox";
-            StateBox.Size = new Size(272, 28);
-            StateBox.TabIndex = 5;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(41, 98);
+            resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            label2.Size = new Size(72, 28);
-            label2.TabIndex = 6;
-            label2.Text = "Patient";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(40, 175);
+            resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            label3.Size = new Size(73, 28);
-            label3.TabIndex = 7;
-            label3.Text = "Doctor";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(40, 265);
+            resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
-            label4.Size = new Size(54, 28);
-            label4.TabIndex = 8;
-            label4.Text = "Time";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(38, 349);
+            resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            label5.Size = new Size(54, 28);
-            label5.TabIndex = 9;
-            label5.Text = "Price";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(38, 432);
+            resources.ApplyResources(label6, "label6");
             label6.Name = "label6";
-            label6.Size = new Size(56, 28);
-            label6.TabIndex = 10;
-            label6.Text = "State";
             // 
-            // button1
+            // okbtn
             // 
-            button1.BackColor = Color.SeaGreen;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft JhengHei", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(38, 528);
-            button1.Name = "button1";
-            button1.Size = new Size(134, 40);
-            button1.TabIndex = 11;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
+            okbtn.BackColor = Color.SeaGreen;
+            okbtn.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(okbtn, "okbtn");
+            okbtn.ForeColor = SystemColors.ButtonHighlight;
+            okbtn.Name = "okbtn";
+            okbtn.UseVisualStyleBackColor = false;
+            okbtn.Click += okbtn_Click;
+            // 
+            // CancelBtn
+            // 
+            CancelBtn.BackColor = Color.Brown;
+            resources.ApplyResources(CancelBtn, "CancelBtn");
+            CancelBtn.ForeColor = Color.White;
+            CancelBtn.Name = "CancelBtn";
+            CancelBtn.UseVisualStyleBackColor = false;
+            CancelBtn.Click += CancelBtn_Click;
             // 
             // ResrveData
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 234, 249);
-            ClientSize = new Size(410, 612);
-            Controls.Add(button1);
+            Controls.Add(CancelBtn);
+            Controls.Add(okbtn);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -168,13 +137,13 @@
             Controls.Add(label2);
             Controls.Add(StateBox);
             Controls.Add(priceTextBox);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtp1);
             Controls.Add(drBox);
             Controls.Add(PatientBox);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ResrveData";
-            Text = "Form1";
+            Load += ResrveData_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,7 +153,7 @@
         private Label label1;
         private ComboBox PatientBox;
         private ComboBox drBox;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtp1;
         private TextBox priceTextBox;
         private ComboBox StateBox;
         private Label label2;
@@ -192,6 +161,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button button1;
+        private Button okbtn;
+        private Button CancelBtn;
     }
 }

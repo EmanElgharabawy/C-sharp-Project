@@ -10,9 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="RofidaMohamed\hiiiii\**" />
+    <EmbeddedResource Remove="RofidaMohamed\hiiiii\**" />
+    <None Remove="RofidaMohamed\hiiiii\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="NorhanMostafa\NewFolder1\" />
     <Folder Include="NorhanMostafa\NewFolder\" />
-    <Folder Include="RofidaMohamed\hiiiii\" />
   </ItemGroup>
 
   <ItemGroup>
