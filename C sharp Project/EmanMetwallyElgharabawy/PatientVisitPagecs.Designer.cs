@@ -41,11 +41,13 @@
             bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
             panel1 = new Panel();
             pictureBox12 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            label1 = new Label();
             label4 = new Label();
+            label3 = new Label();
+            label1 = new Label();
             label2 = new Label();
+            pictureBox5 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             label8 = new Label();
             label9 = new Label();
@@ -59,14 +61,23 @@
             addbtn = new Button();
             editbtn = new Button();
             delBtn = new Button();
+            pictureBox4 = new PictureBox();
+            bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -76,9 +87,9 @@
             label5.ForeColor = Color.Navy;
             label5.Location = new Point(261, 12);
             label5.Name = "label5";
-            label5.Size = new Size(230, 38);
+            label5.Size = new Size(182, 38);
             label5.TabIndex = 143;
-            label5.Text = "Patient of Today:";
+            label5.Text = "Prescription :";
             // 
             // label6
             // 
@@ -90,6 +101,7 @@
             label6.Size = new Size(95, 24);
             label6.TabIndex = 22;
             label6.Text = "Logout";
+            label6.Click += label6_Click;
             // 
             // pictureBox6
             // 
@@ -100,6 +112,7 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 6;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // pictureBox7
             // 
@@ -132,11 +145,13 @@
             // 
             panel1.BackColor = Color.FromArgb(134, 191, 243);
             panel1.Controls.Add(pictureBox12);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Controls.Add(pictureBox8);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(pictureBox1);
@@ -148,68 +163,95 @@
             // 
             // pictureBox12
             // 
+            pictureBox12.Cursor = Cursors.Hand;
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(27, 373);
+            pictureBox12.Location = new Point(20, 371);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(47, 28);
+            pictureBox12.Size = new Size(49, 38);
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox12.TabIndex = 38;
+            pictureBox12.TabIndex = 160;
             pictureBox12.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(27, 296);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(47, 39);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 37;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(27, 233);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(47, 32);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 36;
-            pictureBox8.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(81, 373);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 28);
-            label1.TabIndex = 25;
-            label1.Text = "History";
-            label1.Click += label1_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
-            label4.ForeColor = Color.WhiteSmoke;
-            label4.Location = new Point(81, 307);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(89, 284);
             label4.Name = "label4";
-            label4.Size = new Size(82, 28);
-            label4.TabIndex = 24;
-            label4.Text = "Today";
+            label4.Size = new Size(99, 28);
+            label4.TabIndex = 159;
+            label4.Text = "Doctors";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Cursor = Cursors.Hand;
+            label3.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(83, 374);
+            label3.Name = "label3";
+            label3.Size = new Size(146, 28);
+            label3.TabIndex = 158;
+            label3.Text = "Reservation";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Cursor = Cursors.Hand;
+            label1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(78, 460);
+            label1.Name = "label1";
+            label1.Size = new Size(153, 28);
+            label1.TabIndex = 157;
+            label1.Text = "Receptionist";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(81, 237);
+            label2.Location = new Point(99, 199);
             label2.Name = "label2";
-            label2.Size = new Size(135, 28);
-            label2.TabIndex = 23;
-            label2.Text = "DashBoard";
-            label2.Click += label2_Click;
+            label2.Size = new Size(91, 28);
+            label2.TabIndex = 156;
+            label2.Text = "Patient";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Cursor = Cursors.Hand;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(27, 275);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(28, 37);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 155;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Cursor = Cursors.Hand;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(21, 457);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(39, 41);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 154;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(27, 198);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(43, 29);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 153;
+            pictureBox2.TabStop = false;
             // 
             // bunifuElipse1
             // 
@@ -297,7 +339,7 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(276, 377);
+            dataGridView1.Location = new Point(276, 383);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -310,7 +352,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 20;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(809, 299);
+            dataGridView1.Size = new Size(809, 285);
             dataGridView1.TabIndex = 202;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
@@ -335,11 +377,11 @@
             // 
             // textBox1
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Segoe UI", 12F);
             textBox1.Location = new Point(856, 329);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(229, 34);
+            textBox1.Size = new Size(229, 27);
             textBox1.TabIndex = 205;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -388,12 +430,55 @@
             delBtn.UseVisualStyleBackColor = false;
             delBtn.Click += delBtn_Click;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1029, 12);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(35, 40);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 209;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
+            // bunifuElipse3
+            // 
+            bunifuElipse3.ElipseRadius = 20;
+            bunifuElipse3.TargetControl = delBtn;
+            // 
+            // bunifuElipse4
+            // 
+            bunifuElipse4.ElipseRadius = 20;
+            bunifuElipse4.TargetControl = addbtn;
+            // 
+            // bunifuElipse5
+            // 
+            bunifuElipse5.ElipseRadius = 25;
+            bunifuElipse5.TargetControl = textBox1;
+            // 
+            // bunifuElipse6
+            // 
+            bunifuElipse6.ElipseRadius = 20;
+            bunifuElipse6.TargetControl = editbtn;
+            // 
+            // bunifuElipse7
+            // 
+            bunifuElipse7.ElipseRadius = 25;
+            bunifuElipse7.TargetControl = DiagText;
+            // 
+            // bunifuElipse8
+            // 
+            bunifuElipse8.ElipseRadius = 20;
+            bunifuElipse8.TargetControl = medText;
+            // 
             // PatientVisitPagecs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 234, 249);
             ClientSize = new Size(1127, 696);
+            Controls.Add(pictureBox4);
             Controls.Add(delBtn);
             Controls.Add(editbtn);
             Controls.Add(addbtn);
@@ -421,9 +506,11 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -449,11 +536,20 @@
         private Button delBtn;
         private Button editbtn;
         private Button addbtn;
-        private Label label2;
-        private Label label4;
-        private Label label1;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
         private PictureBox pictureBox12;
+        private Label label4;
+        private Label label3;
+        private Label label1;
+        private Label label2;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
     }
 }

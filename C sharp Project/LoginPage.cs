@@ -5,12 +5,14 @@ using System.Windows.Forms;
 using C_sharp_Project.YoussifMohamed.Model.Database;
 using C_sharp_Project.YoussifMohamed.Model.Entity;
 using C_sharp_Project.EmanMetwallyElgharabawy;
+using C_sharp_Project.RofidaMohamed;
 
 namespace C_sharp_Project
 {
     public partial class LoginPage : Form
     {
         ClinicDB db = new ClinicDB();
+
 
         public LoginPage()
         {
@@ -40,6 +42,12 @@ namespace C_sharp_Project
                     DoctorPage.Show();
                     this.Hide();
                 }
+                else if (txtUsername.Text == "Admin" && txtPassword.Text == "Home123")
+                {
+                    Home_Page homePage = new Home_Page();
+                    homePage.Show();
+                    this.Hide();
+                }
                 else
                 {
                     MessageBox.Show("Wrong UserName or Password");
@@ -47,21 +55,21 @@ namespace C_sharp_Project
             }
             else if (Role.SelectedIndex == 1)
             {
-                if (txtUsername.Text=="" || txtPassword.Text== "")
+                if (txtUsername.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("Please Enter Doctor Name And Doctor Password");
                 }
                 else
                 {
                     var checkDoctor = db.Doctor.FirstOrDefault(a => a.Name == txtUsername.Text && a.password == txtPassword.Text);
-                    if (checkDoctor != null && checkDoctor.Name==txtUsername.Text)
+                    if (checkDoctor != null && checkDoctor.Name == txtUsername.Text)
                     {
-                        PatientVisitPagecs PatientVisitPagecs = new PatientVisitPagecs();
-                        PatientVisitPagecs.Show();
+                        drDash drdash = new drDash(checkDoctor.Id);
+                        drdash.Show();
                         this.Hide();
                     }
                     else
-                       MessageBox.Show("Wrong UserName or Password");
+                        MessageBox.Show("Wrong UserName or Password");
                 }
             }
 
@@ -73,10 +81,10 @@ namespace C_sharp_Project
                 }
                 else
                 {
-                    var checkDoctor = db.Reciptionist.FirstOrDefault(a => a.Name == txtUsername.Text && a.Password == txtPassword.Text);
-                    if (checkDoctor != null)
+                    var checkRecep = db.Reciptionist.FirstOrDefault(a => a.Name == txtUsername.Text && a.Password == txtPassword.Text);
+                    if (checkRecep != null)
                     {
-                        PatientPage PatientPage = new PatientPage();
+                        PatientPage PatientPage = new PatientPage(checkRecep.Id);
                         PatientPage.Show();
                         this.Hide();
                     }
@@ -101,5 +109,9 @@ namespace C_sharp_Project
         {
         }
 
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

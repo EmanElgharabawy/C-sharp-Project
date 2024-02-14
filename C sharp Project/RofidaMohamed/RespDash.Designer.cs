@@ -28,12 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RespDash));
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             label6 = new Label();
             panel1 = new Panel();
+            pictureBox12 = new PictureBox();
+            label4 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label5 = new Label();
+            pictureBox8 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox14 = new PictureBox();
             pictureBox11 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -60,13 +69,17 @@
             pictureBox10 = new PictureBox();
             label10 = new Label();
             perclabel = new Label();
-            pictureBox12 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            label4 = new Label();
-            label1 = new Label();
-            label2 = new Label();
+            bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(components);
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -80,9 +93,6 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // label6
@@ -95,24 +105,123 @@
             label6.Size = new Size(95, 24);
             label6.TabIndex = 22;
             label6.Text = "Logout";
+            label6.Click += label6_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(134, 191, 243);
             panel1.Controls.Add(pictureBox12);
-            panel1.Controls.Add(pictureBox11);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(pictureBox8);
-            panel1.Controls.Add(label6);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(pictureBox14);
+            panel1.Controls.Add(pictureBox11);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label6);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 696);
+            panel1.Size = new Size(250, 700);
             panel1.TabIndex = 104;
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Cursor = Cursors.Hand;
+            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
+            pictureBox12.Location = new Point(20, 371);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(49, 38);
+            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox12.TabIndex = 160;
+            pictureBox12.TabStop = false;
+            pictureBox12.Click += pictureBox12_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Cursor = Cursors.Hand;
+            label4.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(89, 284);
+            label4.Name = "label4";
+            label4.Size = new Size(99, 28);
+            label4.TabIndex = 159;
+            label4.Text = "Doctors";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Cursor = Cursors.Hand;
+            label1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(83, 374);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 28);
+            label1.TabIndex = 158;
+            label1.Text = "Reservation";
+            label1.Click += label1_Click_1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
+            label2.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(78, 460);
+            label2.Name = "label2";
+            label2.Size = new Size(153, 28);
+            label2.TabIndex = 157;
+            label2.Text = "Receptionist";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Cursor = Cursors.Hand;
+            label5.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(99, 199);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 28);
+            label5.TabIndex = 156;
+            label5.Text = "Patient";
+            label5.Click += label5_Click_1;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Cursor = Cursors.Hand;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(27, 275);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(28, 37);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 155;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Cursor = Cursors.Hand;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(21, 457);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(39, 41);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 154;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Cursor = Cursors.Hand;
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(27, 198);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(43, 29);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 153;
+            pictureBox14.TabStop = false;
+            pictureBox14.Click += pictureBox14_Click_1;
             // 
             // pictureBox11
             // 
@@ -194,35 +303,35 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(73, 151, 229);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(73, 151, 229);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(73, 151, 229);
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(73, 151, 229);
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             dataGridView1.ColumnHeadersHeight = 35;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Azure;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = SystemColors.Window;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle17.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle17.SelectionBackColor = Color.Azure;
+            dataGridViewCellStyle17.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle17;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
             dataGridView1.Location = new Point(265, 390);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(134, 191, 243);
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(134, 191, 243);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = SystemColors.Control;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle18.ForeColor = Color.FromArgb(134, 191, 243);
+            dataGridViewCellStyle18.SelectionBackColor = Color.LightGray;
+            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(134, 191, 243);
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 20;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -382,9 +491,9 @@
             // 
             pictureBox10.BackgroundImage = (Image)resources.GetObject("pictureBox10.BackgroundImage");
             pictureBox10.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox10.Location = new Point(836, 96);
+            pictureBox10.Location = new Point(889, 96);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(269, 176);
+            pictureBox10.Size = new Size(216, 161);
             pictureBox10.TabIndex = 137;
             pictureBox10.TabStop = false;
             // 
@@ -409,76 +518,42 @@
             perclabel.TabIndex = 139;
             perclabel.Text = "0%";
             // 
-            // pictureBox12
+            // bunifuElipse2
             // 
-            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(22, 382);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(47, 31);
-            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox12.TabIndex = 145;
-            pictureBox12.TabStop = false;
+            bunifuElipse2.ElipseRadius = 30;
+            bunifuElipse2.TargetControl = panel2;
             // 
-            // pictureBox9
+            // bunifuElipse1
             // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(22, 311);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(47, 36);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 144;
-            pictureBox9.TabStop = false;
+            bunifuElipse1.ElipseRadius = 70;
+            bunifuElipse1.TargetControl = this;
             // 
-            // pictureBox8
+            // bunifuElipse3
             // 
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(22, 242);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(47, 35);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 143;
-            pictureBox8.TabStop = false;
+            bunifuElipse3.ElipseRadius = 30;
+            bunifuElipse3.TargetControl = panel3;
             // 
-            // label4
+            // bunifuElipse4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(85, 314);
-            label4.Name = "label4";
-            label4.Size = new Size(91, 28);
-            label4.TabIndex = 142;
-            label4.Text = "Patient";
+            bunifuElipse4.ElipseRadius = 30;
+            bunifuElipse4.TargetControl = panel3;
             // 
-            // label1
+            // bunifuElipse5
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(85, 380);
-            label1.Name = "label1";
-            label1.Size = new Size(146, 28);
-            label1.TabIndex = 141;
-            label1.Text = "Reservation";
-            label1.Click += label1_Click;
+            bunifuElipse5.ElipseRadius = 30;
+            bunifuElipse5.TargetControl = panel4;
             // 
-            // label2
+            // bunifuElipse6
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.WhiteSmoke;
-            label2.Location = new Point(85, 244);
-            label2.Name = "label2";
-            label2.Size = new Size(135, 28);
-            label2.TabIndex = 140;
-            label2.Text = "DashBoard";
+            bunifuElipse6.ElipseRadius = 30;
+            bunifuElipse6.TargetControl = panel3;
             // 
             // RespDash
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 234, 249);
-            ClientSize = new Size(1127, 696);
+            ClientSize = new Size(1160, 700);
             Controls.Add(perclabel);
             Controls.Add(label10);
             Controls.Add(pictureBox10);
@@ -504,6 +579,10 @@
             Load += RespDash_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -520,9 +599,6 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -557,10 +633,18 @@
         private Label label10;
         private Label perclabel;
         private PictureBox pictureBox12;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
         private Label label4;
-        private Label label2;
         private Label label1;
+        private Label label2;
+        private Label label5;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox14;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
     }
 }

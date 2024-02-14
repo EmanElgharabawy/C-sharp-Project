@@ -15,16 +15,17 @@ namespace C_sharp_Project.RofidaMohamed
     public partial class drDash : Form
     {
         ClinicDB db = new ClinicDB();
-        int DoctorId = 17;
-        public drDash()
+        private int DocId;
+        public drDash(int DocId)
         {
             InitializeComponent();
+            this.DocId = DocId;
         }
 
         private void load()
         {
             var list = db.ReciptionAddPatientDoc
-               .Where(r => r.Appointment.Date == DateTime.Now.Date && r.DoctorID == DoctorId)
+               .Where(r => r.Appointment.Date == DateTime.Now.Date && r.DoctorID == DocId)
                .OrderBy(r => r.Appointment)
                .Select(
                    res => new
@@ -37,7 +38,7 @@ namespace C_sharp_Project.RofidaMohamed
 
             dataGridView1.DataSource = list;
 
-            var wait = db.ReciptionAddPatientDoc.Where(r => r.Appointment.Date == DateTime.Now.Date && r.State == false && r.DoctorID == DoctorId).ToList();
+            var wait = db.ReciptionAddPatientDoc.Where(r => r.Appointment.Date == DateTime.Now.Date && r.State == false && r.DoctorID == DocId).ToList();
 
             int allNo = list.Count;
             int waitNo = wait.Count;
@@ -52,7 +53,8 @@ namespace C_sharp_Project.RofidaMohamed
             //progress bar
             progressBar1.Maximum = allNo;
             progressBar1.Value = doneNo;
-            perclabel.Text = $"{((double)doneNo / allNo) * 100}%";
+            int num = (int)(((float)doneNo / allNo) * 100);
+            perclabel.Text = $"{num}%";
 
             //search part
             searchBox.Focus();
@@ -75,7 +77,7 @@ namespace C_sharp_Project.RofidaMohamed
             string str = searchBox.Text;
             var reservations = db.ReciptionAddPatientDoc
                         .OrderBy(res => res.Appointment)
-                        .Where(R => R.Patient.Name.StartsWith(str) && R.Appointment.Date == DateTime.Now.Date && R.DoctorID == DoctorId)
+                        .Where(R => R.Patient.Name.StartsWith(str) && R.Appointment.Date == DateTime.Now.Date && R.DoctorID == DocId)
                         .Select(
                         res => new
                         {
@@ -95,18 +97,36 @@ namespace C_sharp_Project.RofidaMohamed
 
         private void label4_Click(object sender, EventArgs e)
         {
-            PatientVisitPagecs f = new PatientVisitPagecs();
+            PatientVisitPagecs f = new PatientVisitPagecs(DocId);
 
             f.Show();
             this.Hide();
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            HistoryOfPatient f = new HistoryOfPatient();
 
-            f.Show();
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            PatientVisitPagecs vistipage = new PatientVisitPagecs(DocId);
+            vistipage.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        { }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
             this.Hide();
         }
     }

@@ -1,4 +1,6 @@
-﻿using C_sharp_Project.YoussifMohamed.Model.Database;
+﻿using C_sharp_Project.EmanMetwallyElgharabawy;
+using C_sharp_Project.RofidaMohamed;
+using C_sharp_Project.YoussifMohamed.Model.Database;
 using C_sharp_Project.YoussifMohamed.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -61,16 +63,7 @@ namespace C_sharp_Project
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Index != -1)
-            {
-                Recp.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Id"].Value);
-                Recp = db.Reciptionist.Where(a => a.Id == Recp.Id).FirstOrDefault();
-                textBox1.Text = Recp.Name;
-                comboBox1.Text = Recp.Gender;
-                textBox3.Text = Recp.Address;
-                textBox2.Text = Recp.Phone;
-                textBox4.Text = Recp.Password;
-            }
+           
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
@@ -101,17 +94,109 @@ namespace C_sharp_Project
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
-
-
-
-
-
 
         private void label11_Click(object sender, EventArgs e)
         { }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Home_Page hpage = new Home_Page();
+            hpage.Show();
+            this.Hide();
+        }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+            LoginPage lpage = new LoginPage();
+            lpage.Show();
+            this.Hide();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            LoginPage lpage = new LoginPage();
+            lpage.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            PatientPage patientPage = new PatientPage();
+            patientPage.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            PatientPage patientPage = new PatientPage();
+            patientPage.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            DoctorPage dpage = new DoctorPage();
+            dpage.Show();
+            this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            DoctorPage dpage = new DoctorPage();
+            dpage.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            //ReservationRel reservation = new ReservationRel();
+            //reservation.Show();
+            //this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        { }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            //ReservationRel reservation = new ReservationRel();
+            //reservation.Show();
+            //this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Receptionist receptionist = new Receptionist();
+            receptionist.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Receptionist receptionist = new Receptionist();
+            receptionist.Show();
+            this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_DoubleClick_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                Recp.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Id"].Value);
+                Recp = db.Reciptionist.Where(a => a.Id == Recp.Id).FirstOrDefault();
+                textBox1.Text = Recp.Name;
+                comboBox1.Text = Recp.Gender;
+                textBox3.Text = Recp.Address;
+                textBox2.Text = Recp.Phone;
+                textBox4.Text = Recp.Password;
+            }
+        }
     }
 }

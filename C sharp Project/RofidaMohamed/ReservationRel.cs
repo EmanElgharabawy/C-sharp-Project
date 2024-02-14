@@ -18,11 +18,13 @@ namespace C_sharp_Project.RofidaMohamed
     {
         ClinicDB db = new ClinicDB();
         private int SelectedReserv;
-        public ReservationRel()
+        private int recepID;
+        public ReservationRel(int recepID)
         {
             InitializeComponent();
             editbtn.Enabled = false;
             delbtn.Enabled = false;
+            this.recepID = recepID;
         }
 
         private void load()
@@ -37,9 +39,7 @@ namespace C_sharp_Project.RofidaMohamed
                     Time = res.Appointment.ToString("t"),
                     Price = res.Price.ToString() + " $",
                     State = res.State == true ? "Done" : res.Appointment > DateTime.Now ? "Waiting" : "Missed"
-
-                }
-                ).ToList();
+                }).ToList();
 
             dataGridView1.DataSource = reservations;
 
@@ -55,6 +55,7 @@ namespace C_sharp_Project.RofidaMohamed
             SelSearchbox.Items.Clear();
             SelSearchbox.Items.Add("Doctor");
             SelSearchbox.Items.Add("Patient");
+            dataGridView1.ClearSelection();
 
         }
 
@@ -72,6 +73,7 @@ namespace C_sharp_Project.RofidaMohamed
         private void ReservationRel_Activated(object sender, EventArgs e)
         {
             load();
+            
 
 
 
@@ -79,22 +81,15 @@ namespace C_sharp_Project.RofidaMohamed
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            int v = 1;
-            ResrveData rd = new ResrveData(v);
-
+            ResrveData rd = new ResrveData(recepID);
             rd.ShowDialog();
 
         }
 
         private void editbtn_Click(object sender, EventArgs e)
         {
-            int v = 1;
             ReciptionAddPatientDoc reserv = db.ReciptionAddPatientDoc.Find(SelectedReserv);
-
-
-
-            ResrveData rd = new ResrveData(v, reserv);
-
+            ResrveData rd = new ResrveData(recepID, reserv);
             rd.ShowDialog();
 
         }
@@ -236,17 +231,35 @@ namespace C_sharp_Project.RofidaMohamed
 
             }
             dataGridView1.Columns["ID"].Visible = false;
-
             dataGridView1.ClearSelection();
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            RespDash f = new RespDash();
 
-            f.Show();
+        }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+            PatientPage ppage = new PatientPage(recepID);
+            ppage.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            RespDash rec = new RespDash(recepID);
+            rec.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
             this.Hide();
         }
     }

@@ -30,6 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorPage));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label10 = new Label();
             updatebtn = new Bunifu.Framework.UI.BunifuThinButton2();
             addbtn = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -50,10 +53,10 @@
             label3 = new Label();
             label1 = new Label();
             panel1 = new Panel();
+            pictureBox12 = new PictureBox();
             label2 = new Label();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -66,9 +69,9 @@
             searchbtn = new Bunifu.Framework.UI.BunifuThinButton2();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -202,6 +205,7 @@
             // 
             Doctorspecialation.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Doctorspecialation.FormattingEnabled = true;
+            Doctorspecialation.Items.AddRange(new object[] { "Anesthesiology", "Cardiology", "Dermatology", "Emergency Medicine", "Family Medicine", "Forensic Pathology", "General Surgery", "Hospital Medicine" });
             Doctorspecialation.Location = new Point(611, 107);
             Doctorspecialation.Name = "Doctorspecialation";
             Doctorspecialation.Size = new Size(133, 28);
@@ -212,6 +216,7 @@
             // 
             DoctorGender.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DoctorGender.FormattingEnabled = true;
+            DoctorGender.Items.AddRange(new object[] { "male", "female" });
             DoctorGender.Location = new Point(457, 107);
             DoctorGender.Name = "DoctorGender";
             DoctorGender.Size = new Size(133, 28);
@@ -277,6 +282,7 @@
             label6.Size = new Size(95, 24);
             label6.TabIndex = 22;
             label6.Text = "Logout";
+            label6.Click += label6_Click;
             // 
             // label4
             // 
@@ -288,6 +294,7 @@
             label4.Size = new Size(99, 28);
             label4.TabIndex = 21;
             label4.Text = "Doctors";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -296,9 +303,10 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(80, 343);
             label3.Name = "label3";
-            label3.Size = new Size(135, 28);
+            label3.Size = new Size(146, 28);
             label3.TabIndex = 20;
-            label3.Text = "Laboratory";
+            label3.Text = "Reservation";
+            label3.Click += label3_Click;
             // 
             // label1
             // 
@@ -310,10 +318,12 @@
             label1.Size = new Size(153, 28);
             label1.TabIndex = 19;
             label1.Text = "Receptionist";
+            label1.Click += label1_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(134, 191, 243);
+            panel1.Controls.Add(pictureBox12);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -321,7 +331,6 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(pictureBox5);
-            panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
@@ -330,6 +339,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 700);
             panel1.TabIndex = 104;
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Cursor = Cursors.Hand;
+            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
+            pictureBox12.Location = new Point(18, 337);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(49, 38);
+            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox12.TabIndex = 153;
+            pictureBox12.TabStop = false;
+            pictureBox12.Click += pictureBox12_Click;
             // 
             // label2
             // 
@@ -341,6 +362,7 @@
             label2.Size = new Size(91, 28);
             label2.TabIndex = 18;
             label2.Text = "Patient";
+            label2.Click += label2_Click;
             // 
             // pictureBox6
             // 
@@ -351,6 +373,7 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 6;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // pictureBox5
             // 
@@ -362,16 +385,6 @@
             pictureBox5.TabIndex = 5;
             pictureBox5.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(20, 337);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(37, 38);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 4;
-            pictureBox4.TabStop = false;
-            // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
@@ -381,6 +394,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // pictureBox2
             // 
@@ -391,6 +405,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
@@ -401,17 +416,19 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox7
             // 
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(1049, 18);
+            pictureBox7.Location = new Point(1101, 14);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(51, 50);
+            pictureBox7.Size = new Size(36, 29);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 105;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // bunifuElipse1
             // 
@@ -483,13 +500,50 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(256, 337);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(73, 151, 229);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(73, 151, 229);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Azure;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(272, 342);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(892, 347);
-            dataGridView1.TabIndex = 126;
-            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(134, 191, 243);
+            dataGridViewCellStyle3.SelectionBackColor = Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(134, 191, 243);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 20;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(865, 346);
+            dataGridView1.TabIndex = 127;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick_1;
             // 
             // DoctorPage
             // 
@@ -525,9 +579,9 @@
             Load += DoctorPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -562,7 +616,6 @@
         private Label label2;
         private PictureBox pictureBox6;
         private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
@@ -573,6 +626,7 @@
         private Label label11;
         private TextBox Doctorpassword;
         private Bunifu.Framework.UI.BunifuThinButton2 searchbtn;
+        private PictureBox pictureBox12;
         private DataGridView dataGridView1;
     }
 }

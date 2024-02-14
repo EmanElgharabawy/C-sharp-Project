@@ -42,10 +42,12 @@
             label1 = new Label();
             Role = new ComboBox();
             pictureBox4 = new PictureBox();
+            pictureBox7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -60,8 +62,8 @@
             // 
             // txtUsername
             // 
-            txtUsername.BackColor = Color.DarkSlateGray;
-            txtUsername.ForeColor = SystemColors.InactiveBorder;
+            txtUsername.BackColor = Color.FromArgb(213, 242, 238);
+            txtUsername.ForeColor = SystemColors.ControlText;
             txtUsername.Location = new Point(94, 253);
             txtUsername.Multiline = true;
             txtUsername.Name = "txtUsername";
@@ -80,8 +82,8 @@
             // 
             // txtPassword
             // 
-            txtPassword.BackColor = Color.DarkSlateGray;
-            txtPassword.ForeColor = SystemColors.InactiveBorder;
+            txtPassword.BackColor = Color.FromArgb(213, 242, 238);
+            txtPassword.ForeColor = SystemColors.ControlText;
             txtPassword.Location = new Point(94, 332);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
@@ -171,7 +173,7 @@
             // 
             // Role
             // 
-            Role.BackColor = Color.DarkSlateGray;
+            Role.BackColor = Color.FromArgb(213, 242, 238);
             Role.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Role.FormattingEnabled = true;
             Role.Items.AddRange(new object[] { "Admin ", "Doctor ", "Reciptionist" });
@@ -191,6 +193,18 @@
             pictureBox4.TabIndex = 113;
             pictureBox4.TabStop = false;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(311, 12);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(27, 27);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 143;
+            pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
+            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -198,6 +212,7 @@
             BackColor = Color.FromArgb(191, 219, 248);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(350, 497);
+            Controls.Add(pictureBox7);
             Controls.Add(pictureBox4);
             Controls.Add(Role);
             Controls.Add(label1);
@@ -219,6 +234,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -238,5 +254,6 @@
         private Label label1;
         private ComboBox Role;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox7;
     }
 }

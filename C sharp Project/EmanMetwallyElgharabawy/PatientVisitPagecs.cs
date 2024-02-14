@@ -18,12 +18,13 @@ namespace C_sharp_Project.EmanMetwallyElgharabawy
 {
     public partial class PatientVisitPagecs : Form
     {
-        private int doctorId = 17;
+        private int doctorId;
         ClinicDB db = new ClinicDB();
         private int SelectedId;
-        public PatientVisitPagecs()
+        public PatientVisitPagecs(int DoctorId)
         {
             InitializeComponent();
+            doctorId = DoctorId;
             editbtn.Enabled = false;
             delBtn.Enabled = false;
         }
@@ -39,30 +40,6 @@ namespace C_sharp_Project.EmanMetwallyElgharabawy
             PatientBox.DataSource = patientWait;
             PatientBox.SelectedIndex = -1;
 
-
-
-            /*var patientDone = db.ReciptionAddPatientDoc
-               .Where(r => r.Appointment.Date == DateTime.Now.Date && r.DoctorID == doctorId && r.State == true)
-               .Select(p => new { Name = p.Patient.Name, Id = p.PatientID })
-               .ToList();
-
-            var prescriptionData = db.Doctorspatient
-                .Where(p => p.DoctorID == doctorId)
-                .OrderBy(p => p.Id)
-                .ToList(); // Fetch data from the database
-
-            var prescription = prescriptionData
-                .Join(patientDone,
-                    presc => presc.PatientID,
-                    done => done.Id,
-                    (presc, done) => new
-                    {
-                        ID = presc.Id,
-                        Patient = done.Name,
-                        Medicine = presc.Medicine,
-                        Diagnosis = presc.Diagnosis
-                    })
-                .ToList();*/
 
             var patientDone = db.ReciptionAddPatientDoc
             .Where(r => r.Appointment.Date == DateTime.Now.Date && r.DoctorID == doctorId && r.State == true)
@@ -140,7 +117,7 @@ namespace C_sharp_Project.EmanMetwallyElgharabawy
             db.Doctorspatient.Add(prescription);
             db.SaveChanges();
             load();
-
+            Clear();
 
         }
 
@@ -276,21 +253,23 @@ namespace C_sharp_Project.EmanMetwallyElgharabawy
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-            drDash f = new drDash();
-
-            f.Show();
-
+            drDash drdash = new drDash(doctorId);
+            drdash.Show();
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            HistoryOfPatient f = new HistoryOfPatient();
-
-            f.Show(); 
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
             this.Hide();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

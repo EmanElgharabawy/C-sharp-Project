@@ -16,10 +16,11 @@ namespace C_sharp_Project.RofidaMohamed
     public partial class RespDash : Form
     {
         ClinicDB db = new ClinicDB();
-
-        public RespDash()
+        private int recepID;
+        public RespDash(int recepID)
         {
             InitializeComponent();
+            this.recepID = recepID;
             SelSearchbox.Items.Add("Doctor");
             SelSearchbox.Items.Add("Patient");
         }
@@ -56,7 +57,8 @@ namespace C_sharp_Project.RofidaMohamed
             //progress bar
             progressBar1.Maximum = allNo;
             progressBar1.Value = doneNo;
-            perclabel.Text = $"{((double)doneNo / allNo) * 100}%";
+            int num = (int)(((double)doneNo / allNo) * 100);
+            perclabel.Text = $"{num}%";
 
             //search part
             searchBox.Focus();
@@ -131,11 +133,60 @@ namespace C_sharp_Project.RofidaMohamed
             }
         }
 
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            PatientPage patientPage = new PatientPage(recepID);
+            patientPage.Show();
+            this.Hide();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            PatientPage patientPage = new PatientPage(recepID);
+            patientPage.Show();
+            this.Hide();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
-            ReservationRel f = new ReservationRel();
+            ReservationRel reservationRel = new ReservationRel(recepID);
+            reservationRel.Show();
+            this.Hide();
+        }
 
-            f.Show();
+        private void label6_Click(object sender, EventArgs e)
+        {
+            LoginPage login = new LoginPage();
+            login.Show();
+            this.Hide();
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+            PatientPage ppage = new PatientPage(recepID);
+            ppage.Show();
+            this.Hide();
+        }
+
+        private void pictureBox14_Click_1(object sender, EventArgs e)
+        {
+            PatientPage ppage = new PatientPage(recepID);
+            ppage.Show();
+            this.Hide();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            ReservationRel reservation = new ReservationRel(recepID);
+            reservation.Show();
+            this.Hide();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            ReservationRel reservation = new ReservationRel(recepID);
+            reservation.Show();
             this.Hide();
         }
     }

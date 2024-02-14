@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResrveData));
             label1 = new Label();
             PatientBox = new ComboBox();
@@ -42,6 +43,9 @@
             label6 = new Label();
             okbtn = new Button();
             CancelBtn = new Button();
+            bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(components);
             SuspendLayout();
             // 
             // label1
@@ -123,6 +127,21 @@
             CancelBtn.UseVisualStyleBackColor = false;
             CancelBtn.Click += CancelBtn_Click;
             // 
+            // bunifuElipse1
+            // 
+            bunifuElipse1.ElipseRadius = 30;
+            bunifuElipse1.TargetControl = okbtn;
+            // 
+            // bunifuElipse2
+            // 
+            bunifuElipse2.ElipseRadius = 30;
+            bunifuElipse2.TargetControl = CancelBtn;
+            // 
+            // bunifuElipse3
+            // 
+            bunifuElipse3.ElipseRadius = 50;
+            bunifuElipse3.TargetControl = this;
+            // 
             // ResrveData
             // 
             resources.ApplyResources(this, "$this");
@@ -163,5 +182,8 @@
         private Label label6;
         private Button okbtn;
         private Button CancelBtn;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
     }
 }
